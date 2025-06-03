@@ -1,0 +1,131 @@
+# Copyright (C) 2024 OtterSynca
+# This file is distributed under the same license as the OtterSynca - Git Deployment for WordPress plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: OtterSynca - Git Deployment for WordPress 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/otter-synca\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-01-01T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: otter-synca\n"
+
+#. Plugin Name of the plugin
+msgid "OtterSynca - Git Deployment for WordPress"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://ottersynca.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "Deploy WordPress plugins and themes directly from GitHub repositories."
+msgstr ""
+
+#. Author of the plugin
+msgid "OtterSynca"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://ottersynca.com"
+msgstr ""
+
+#: admin/class-otter-synca-admin.php:63
+msgid "Deploying..."
+msgstr ""
+
+#: admin/class-otter-synca-admin.php:64
+msgid "Deploy successful!"
+msgstr ""
+
+#: admin/class-otter-synca-admin.php:65
+msgid "Deploy failed!"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:24
+msgid "OtterSynca"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:37
+msgid "GitHub Token"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:46
+msgid "Your GitHub personal access token. Create one at: https://github.com/settings/tokens"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:53
+msgid "Repository"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:62
+msgid "The GitHub repository in the format: username/repository"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:69
+msgid "Branch"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:78
+msgid "The branch to deploy (default: main)"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:85
+msgid "Deploy Type"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:89
+msgid "Plugin"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:92
+msgid "Theme"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:95
+msgid "Whether to deploy as a plugin or theme"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:102
+msgid "Target Slug"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:111
+msgid "The slug of the plugin or theme to update"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:117
+msgid "Save Settings"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:122
+msgid "Deploy Now"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:123
+msgid "Click the button below to deploy the latest version from your GitHub repository."
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:127
+msgid "Last Deploy"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:131
+msgid "Status:"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:136
+msgid "Message:"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:140
+msgid "Time:"
+msgstr ""
+
+#: admin/partials/otter-synca-admin-display.php:144
+msgid "No deployments yet."
+msgstr "" 

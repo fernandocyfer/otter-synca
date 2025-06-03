@@ -1,0 +1,83 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.otter-synca-admin-content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.otter-synca-admin-main {
+    flex: 1;
+}
+
+.otter-synca-admin-sidebar {
+    width: 300px;
+}
+
+.otter-synca-deploy-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.otter-synca-last-deploy {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.otter-synca-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.otter-synca-status-success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.otter-synca-status-error {
+    background: #f2dede;
+    color: #a94442;
+}
+
+#otter-synca-deploy-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    display: none;
+}
+
+#otter-synca-deploy-status.show {
+    display: block;
+}
+
+#otter-synca-deploy-status.success {
+    background: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+}
+
+#otter-synca-deploy-status.error {
+    background: #f2dede;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
+
+#otter-synca-deploy {
+    margin-top: 1rem;
+}
+
+#otter-synca-deploy.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+} 
