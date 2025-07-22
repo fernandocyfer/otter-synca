@@ -1,0 +1,489 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+:root {
+    --otter-primary: #2271b1;
+    --otter-secondary: #135e96;
+    --otter-success: #00a32a;
+    --otter-error: #d63638;
+    --otter-warning: #dba617;
+    --otter-info: #72aee6;
+    --otter-border: #dcdcde;
+    --otter-bg: #f0f0f1;
+    --otter-card-bg: #fff;
+    --otter-text: #1d2327;
+    --otter-text-light: #50575e;
+    --otter-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --otter-radius: 8px;
+    --otter-transition: all 0.2s ease-in-out;
+}
+
+/* Admin Menu - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-admin-content {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    max-width: 1200px;
+}
+
+.otter-synca-admin .otter-synca-admin-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.otter-synca-admin .otter-synca-admin-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.otter-synca-admin .otter-synca-admin-sidebar .otter-synca-card {
+    margin-bottom: 24px;
+}
+
+.otter-synca-admin .otter-synca-admin-sidebar .otter-synca-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Nav Tabs - Prefixado com .otter-synca-admin */
+.otter-synca-admin .nav-tab-wrapper {
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--otter-border);
+    padding-bottom: 0;
+}
+
+.otter-synca-admin .nav-tab {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-left: 0.5em;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--otter-text-light);
+    transition: var(--otter-transition);
+}
+
+.otter-synca-admin .nav-tab:hover {
+    color: var(--otter-primary);
+    background: transparent;
+}
+
+.otter-synca-admin .nav-tab-active {
+    color: var(--otter-primary);
+    border-bottom-color: var(--otter-primary);
+}
+
+/* Cards - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-card {
+    background: var(--otter-card-bg);
+    border-radius: var(--otter-radius);
+    box-shadow: var(--otter-shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: var(--otter-transition);
+}
+
+.otter-synca-admin .otter-synca-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.otter-synca-admin .otter-synca-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.otter-synca-admin .otter-synca-card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--otter-text);
+}
+
+/* Settings Page - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-deploy-section {
+    margin-top: 30px;
+}
+
+.otter-synca-admin .form-table th {
+    padding: 20px 10px 20px 0;
+    width: 200px;
+    font-weight: 600;
+}
+
+.otter-synca-admin .form-table td {
+    padding: 20px 10px;
+}
+
+.otter-synca-admin .form-table input[type="text"],
+.otter-synca-admin .form-table input[type="password"],
+.otter-synca-admin .form-table select {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 12px;
+    border: 1px solid var(--otter-border);
+    border-radius: 4px;
+    transition: var(--otter-transition);
+}
+
+.otter-synca-admin .form-table input[type="text"]:focus,
+.otter-synca-admin .form-table input[type="password"]:focus,
+.otter-synca-admin .form-table select:focus {
+    border-color: var(--otter-primary);
+    box-shadow: 0 0 0 1px var(--otter-primary);
+    outline: none;
+}
+
+.otter-synca-admin .description {
+    color: var(--otter-text-light);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* Status Badges - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.otter-synca-admin .otter-synca-status-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.otter-synca-admin .otter-synca-status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.otter-synca-admin .otter-synca-status-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* Buttons - Prefixado com .otter-synca-admin */
+.otter-synca-admin .button {
+    transition: var(--otter-transition);
+}
+
+.otter-synca-admin .button-primary {
+    background: var(--otter-primary);
+    border-color: var(--otter-primary);
+}
+
+.otter-synca-admin .button-primary:hover {
+    background: var(--otter-secondary);
+    border-color: var(--otter-secondary);
+}
+
+/* Premium Features - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-premium-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.otter-synca-admin .otter-synca-feature {
+    background: var(--otter-card-bg);
+    border-radius: var(--otter-radius);
+    padding: 24px;
+    box-shadow: var(--otter-shadow);
+    transition: var(--otter-transition);
+}
+
+.otter-synca-admin .otter-synca-feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.otter-synca-admin .otter-synca-feature h3 {
+    color: var(--otter-primary);
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Help Section - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-help-steps {
+    display: grid;
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.otter-synca-admin .otter-synca-help-step {
+    background: var(--otter-card-bg);
+    border-radius: var(--otter-radius);
+    padding: 24px;
+    box-shadow: var(--otter-shadow);
+}
+
+.otter-synca-admin .otter-synca-help-step h3 {
+    color: var(--otter-primary);
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Coffee Options - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-coffee-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.otter-synca-admin .otter-synca-coffee-option {
+    background: var(--otter-card-bg);
+    border-radius: var(--otter-radius);
+    padding: 24px;
+    box-shadow: var(--otter-shadow);
+    text-align: center;
+    transition: var(--otter-transition);
+}
+
+.otter-synca-admin .otter-synca-coffee-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.otter-synca-admin .otter-synca-coffee-option .price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--otter-primary);
+    margin: 16px 0;
+}
+
+/* Deploy Status - Prefixado com .otter-synca-admin */
+.otter-synca-admin #otter-synca-deploy-status {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: var(--otter-radius);
+    display: none;
+    animation: otter-synca-fadeIn 0.3s ease-in-out;
+}
+
+.otter-synca-admin #otter-synca-deploy-status.show {
+    display: block;
+}
+
+.otter-synca-admin #otter-synca-deploy-status.success {
+    background: rgba(0, 163, 42, 0.1);
+    border: 1px solid var(--otter-success);
+    color: var(--otter-success);
+}
+
+.otter-synca-admin #otter-synca-deploy-status.error {
+    background: rgba(214, 54, 56, 0.1);
+    border: 1px solid var(--otter-error);
+    color: var(--otter-error);
+}
+
+/* Animations - Prefixado com otter-synca- */
+@keyframes otter-synca-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - Prefixado com .otter-synca-admin */
+@media screen and (max-width: 782px) {
+    .otter-synca-admin .otter-synca-admin-content {
+        flex-direction: column;
+    }
+
+    .otter-synca-admin .otter-synca-admin-sidebar {
+        width: 100%;
+    }
+
+    .otter-synca-admin .form-table th {
+        width: auto;
+        display: block;
+        padding-bottom: 0;
+    }
+
+    .otter-synca-admin .form-table td {
+        display: block;
+        padding-top: 8px;
+    }
+
+    .otter-synca-admin .form-table input[type="text"],
+    .otter-synca-admin .form-table input[type="password"],
+    .otter-synca-admin .form-table select {
+        max-width: 100%;
+    }
+
+    .otter-synca-admin .nav-tab {
+        padding: 8px 16px;
+    }
+}
+
+/* Loading States - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.otter-synca-admin .otter-synca-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--otter-border);
+    border-top-color: var(--otter-primary);
+    border-radius: 50%;
+    animation: otter-synca-spin 0.8s linear infinite;
+}
+
+@keyframes otter-synca-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Premium Page - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-premium-content {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.otter-synca-admin .otter-synca-premium-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.otter-synca-admin .otter-synca-premium-cta {
+    text-align: center;
+}
+
+.otter-synca-admin .otter-synca-premium-cta .button {
+    font-size: 16px;
+    padding: 8px 24px;
+    height: auto;
+}
+
+/* Help Page - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-help-content {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.otter-synca-admin .otter-synca-help-section {
+    margin-bottom: 40px;
+}
+
+.otter-synca-admin .otter-synca-faq {
+    display: grid;
+    gap: 20px;
+}
+
+.otter-synca-admin .otter-synca-faq-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.otter-synca-admin .otter-synca-faq-item h3 {
+    margin-top: 0;
+    color: #2271b1;
+}
+
+/* Buy Me a Coffee Page - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-coffee-content {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.otter-synca-admin .otter-synca-coffee-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.otter-synca-admin .otter-synca-coffee-message {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+/* Code blocks - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-card code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+/* Webhook URL field - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-card input[readonly] {
+    background-color: #f9f9f9;
+    cursor: text;
+}
+
+/* Toggle buttons - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-toggle-token,
+.otter-synca-admin .otter-synca-toggle-webhook-secret {
+    margin-left: 10px !important;
+}
+
+/* Auto-deploy info - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-auto-deploy-info {
+    background-color: #e7f3ff;
+    border-left: 4px solid #0073aa;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+.otter-synca-admin .otter-synca-auto-deploy-info h3 {
+    margin-top: 0;
+    color: #0073aa;
+}
+
+.otter-synca-admin .otter-synca-auto-deploy-info ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.otter-synca-admin .otter-synca-auto-deploy-info li {
+    margin-bottom: 5px;
+} 
+
+/* Webhook Secret Container - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-webhook-secret-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.otter-synca-admin .otter-synca-webhook-secret-container input[type="password"],
+.otter-synca-admin .otter-synca-webhook-secret-container input[type="text"] {
+    flex: 1;
+}
+
+.otter-synca-admin .otter-synca-webhook-secret-container button {
+    white-space: nowrap;
+    min-width: 120px;
+} 

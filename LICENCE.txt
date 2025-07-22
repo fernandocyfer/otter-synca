@@ -1,0 +1,17 @@
+OtterSynca – Git Deployment & Sync Tool
+Copyright (c) 2025 Fernando Filho / Cyfer Development.
+
+All rights reserved.
+
+This software is proprietary and licensed only to authorized users.  
+Unauthorized copying, distribution, modification, or resale of any part of this plugin is strictly prohibited.
+
+You may not:
+- Share, distribute, or publish this code publicly
+- Modify or reverse-engineer any part of the plugin for redistribution
+- Use this plugin in commercial products or SaaS services without a valid license
+
+By installing or using this plugin, you agree to the terms of this license.
+
+For inquiries, support or license validation, visit:  
+https://cyfer.com.br / https://ottersynca.com
