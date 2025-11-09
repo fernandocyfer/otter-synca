@@ -3,7 +3,7 @@
 /**
  * The core plugin class.
  *
- * @since      1.0.0
+ * @since      1.0.1
  * @package    Otter_Synca
  * @subpackage Otter_Synca/includes
  */
@@ -13,7 +13,7 @@ class Otter_Synca {
      * The loader that's responsible for maintaining and registering all hooks that power
      * the plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   protected
      * @var      Otter_Synca_Loader    $loader    Maintains and registers all hooks for the plugin.
      */
@@ -22,7 +22,7 @@ class Otter_Synca {
     /**
      * The unique identifier of this plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   protected
      * @var      string    $plugin_name    The string used to uniquely identify this plugin.
      */
@@ -31,7 +31,7 @@ class Otter_Synca {
     /**
      * The current version of the plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   protected
      * @var      string    $version    The current version of the plugin.
      */
@@ -40,7 +40,7 @@ class Otter_Synca {
     /**
      * Define the core functionality of the plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      */
     public function __construct() {
         if (defined('OTTER_SYNCA_VERSION')) {
@@ -59,7 +59,7 @@ class Otter_Synca {
     /**
      * Load the required dependencies for this plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   private
      */
     private function load_dependencies() {
@@ -74,13 +74,14 @@ class Otter_Synca {
 
     /**
      * Define the locale for this plugin for internationalization.
+     * WordPress automatically loads translations since version 4.6.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   private
      */
     private function set_locale() {
-        $plugin_i18n = new Otter_Synca_i18n();
-        $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+        // WordPress automatically loads translations for plugins
+        // No manual action needed since WordPress 4.6
     }
 
     /**
@@ -113,7 +114,7 @@ class Otter_Synca {
      * Register all of the hooks related to the public-facing functionality
      * of the plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   private
      */
     private function define_public_hooks() {
@@ -127,7 +128,7 @@ class Otter_Synca {
     /**
      * Run the loader to execute all of the hooks with WordPress.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      */
     public function run() {
         $this->loader->run();
@@ -147,7 +148,7 @@ class Otter_Synca {
     /**
      * The reference to the class that orchestrates the hooks with the plugin.
      *
-     * @since     1.0.0
+     * @since     1.0.1
      * @return    Otter_Synca_Loader    Orchestrates the hooks of the plugin.
      */
     public function get_loader() {
@@ -157,7 +158,7 @@ class Otter_Synca {
     /**
      * Retrieve the version number of the plugin.
      *
-     * @since     1.0.0
+     * @since     1.0.1
      * @return    string    The version number of the plugin.
      */
     public function get_version() {
@@ -167,7 +168,7 @@ class Otter_Synca {
     /**
      * Add query vars for webhook endpoint
      *
-     * @since     1.0.0
+     * @since     1.0.1
      * @param     array    $vars    Existing query vars
      * @return    array    Modified query vars
      */

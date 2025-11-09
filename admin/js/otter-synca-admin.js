@@ -155,7 +155,7 @@
         // Adiciona botão de mostrar/esconder
         $tokenWrapper.append(
             '<button type="button" class="button button-secondary otter-synca-toggle-token" style="margin-left: 10px;">' +
-            'Mostrar Token</button>'
+            'Show Token</button>'
         );
         
         // Handler do botão
@@ -164,7 +164,7 @@
             const isPassword = $tokenField.attr('type') === 'password';
             
             $tokenField.attr('type', isPassword ? 'text' : 'password');
-            $button.text(isPassword ? 'Esconder Token' : 'Mostrar Token');
+            $button.text(isPassword ? 'Hide Token' : 'Show Token');
         });
 
         // Webhook secret field show/hide

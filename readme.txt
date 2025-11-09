@@ -6,7 +6,7 @@ Tags: deployment, git, github, deploy, sync, automation, backup, logs
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP:      7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 textdomain: otter-synca
@@ -20,6 +20,7 @@ OtterSynca is a powerful WordPress plugin that allows you to deploy your plugins
 **🚀 Upgrade to [OtterSynca Pro](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/) for advanced features like automatic deploys, multiple repositories, backups, and detailed logs.**
 
 = Features =
+= Free Version Features =
 
 * GitHub integration using personal access tokens
 * Deploy plugins and themes from any GitHub repository
@@ -28,15 +29,6 @@ OtterSynca is a powerful WordPress plugin that allows you to deploy your plugins
 * Simple deployment logs
 * Secure token storage
 * Clean and intuitive admin interface
-
-= Free Version Features =
-
-* GitHub authentication via personal access token
-* Repository selection
-* Branch selection
-* Manual deployment
-* Basic deployment logs
-* Plugin and theme deployment support
 
 = Pro Version Features =
 
@@ -51,11 +43,10 @@ OtterSynca is a powerful WordPress plugin that allows you to deploy your plugins
 
 = Pro Plans =
 
-* **Freelancer** - 1 Licença – R$249.00/year
-* **Agência** - 5 Licenças – R$499.00/year  
-* **Ilimitado** – Licenças ilimitadas – R$999.00/year
+* **Freelance** - 5 Licenses – $69/year
+* **Agency** - 20 Licenses – $129/year  
+* **Unlimited** – Unlimited Licenses – $208/year
 
-Todos os planos incluem as mesmas funcionalidades Pro, diferenciando apenas na quantidade de licenças disponíveis.
 
 [View all plans and features →](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/)
 
@@ -103,12 +94,19 @@ The free version includes basic deployment features, while Pro adds automatic de
 
 == Changelog ==
 
+= 1.0.1
+* Internationalization
+* Security improvements 
+
 = 1.0.0 =
 * Initial release
 * Added Pro version information
 * Updated pricing and features
 
 == Upgrade Notice ==
+
+= 1.0.1
+The default language is now English and security improvements.
 
 = 1.0.0 =
 Initial release with Pro version support 

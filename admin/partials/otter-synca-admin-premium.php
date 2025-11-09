@@ -2,8 +2,8 @@
 /**
  * Provide a admin area view for the plugin premium features
  *
- * @link       https://github.com/fernandofilho
- * @since      1.0.0
+ * @link       https://github.com/fernandocyfer/otter-synca
+ * @since      1.0.1
  *
  * @package    Otter_Synca
  * @subpackage Otter_Synca/admin/partials
@@ -23,9 +23,9 @@ $pro_active = class_exists('Otter_Synca_Pro');
         <h2 class="otter-synca-card-title">
             <?php esc_html_e('OtterSynca Pro Add-on', 'otter-synca'); ?>
             <?php if ($pro_active): ?>
-                <span class="otter-synca-pro-badge otter-synca-pro-active"><?php esc_html_e('Ativo', 'otter-synca'); ?></span>
+                <span class="otter-synca-pro-badge otter-synca-pro-active"><?php esc_html_e('Active', 'otter-synca'); ?></span>
             <?php else: ?>
-                <span class="otter-synca-pro-badge otter-synca-pro-inactive"><?php esc_html_e('Inativo', 'otter-synca'); ?></span>
+                <span class="otter-synca-pro-badge otter-synca-pro-inactive"><?php esc_html_e('Inactive', 'otter-synca'); ?></span>
             <?php endif; ?>
         </h2>
     </div>
@@ -33,97 +33,97 @@ $pro_active = class_exists('Otter_Synca_Pro');
     <?php if ($pro_active): ?>
         <div class="otter-synca-pro-active-content">
             <p class="description">
-                <?php esc_html_e('OtterSynca Pro está ativo! Você tem acesso a todos os recursos premium.', 'otter-synca'); ?>
+                <?php esc_html_e('OtterSynca Pro is active! You have access to all premium features.', 'otter-synca'); ?>
             </p>
             
             <div class="otter-synca-pro-features-grid">
                 <div class="otter-synca-pro-feature">
-                    <h3>✅ <?php esc_html_e('Deploy Automático', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Deploy automático via webhook do GitHub', 'otter-synca'); ?></p>
+                    <h3>✅ <?php esc_html_e('Auto Deploy', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Automatic deployment via GitHub webhook', 'otter-synca'); ?></p>
                 </div>
                 
                 <div class="otter-synca-pro-feature">
-                    <h3>✅ <?php esc_html_e('Múltiplos Repositórios', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Gerencie vários repositórios simultaneamente', 'otter-synca'); ?></p>
+                    <h3>✅ <?php esc_html_e('Multiple Repositories', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Manage multiple repositories simultaneously', 'otter-synca'); ?></p>
                 </div>
                 
                 <div class="otter-synca-pro-feature">
-                    <h3>✅ <?php esc_html_e('Backup Automático', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Backup automático antes de cada deploy', 'otter-synca'); ?></p>
+                    <h3>✅ <?php esc_html_e('Automatic Backup', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Automatic backup before each deployment', 'otter-synca'); ?></p>
                 </div>
                 
                 <div class="otter-synca-pro-feature">
-                    <h3>✅ <?php esc_html_e('Notificações por Email', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Receba notificações de deploy e backup', 'otter-synca'); ?></p>
+                    <h3>✅ <?php esc_html_e('Email Notifications', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Receive deployment and backup notifications', 'otter-synca'); ?></p>
                 </div>
                 
                 <div class="otter-synca-pro-feature">
-                    <h3>✅ <?php esc_html_e('Logs Detalhados', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Histórico completo de todas as ações', 'otter-synca'); ?></p>
+                    <h3>✅ <?php esc_html_e('Detailed Logs', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Complete history of all actions', 'otter-synca'); ?></p>
                 </div>
                 
                 <div class="otter-synca-pro-feature">
-                    <h3>✅ <?php esc_html_e('Deploy em Massa', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Deploy de múltiplos repositórios de uma vez', 'otter-synca'); ?></p>
+                    <h3>✅ <?php esc_html_e('Bulk Deploy', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Deploy multiple repositories at once', 'otter-synca'); ?></p>
                 </div>
             </div>
             
             <div class="otter-synca-pro-actions">
                 <a href="<?php echo admin_url('admin.php?page=otter-synca-pro'); ?>" class="button button-primary">
-                    <?php esc_html_e('Gerenciar Pro', 'otter-synca'); ?>
+                    <?php esc_html_e('Manage Pro', 'otter-synca'); ?>
                 </a>
                 <a href="<?php echo admin_url('admin.php?page=otter-synca-pro&tab=logs'); ?>" class="button button-secondary">
-                    <?php esc_html_e('Ver Logs', 'otter-synca'); ?>
+                    <?php esc_html_e('View Logs', 'otter-synca'); ?>
                 </a>
             </div>
         </div>
     <?php else: ?>
         <div class="otter-synca-pro-inactive-content">
             <div class="otter-synca-pro-hero">
-                <h2><?php esc_html_e('Leve seu fluxo de trabalho WordPress para o próximo nível', 'otter-synca'); ?></h2>
+                <h2><?php esc_html_e('Take your WordPress workflow to the next level', 'otter-synca'); ?></h2>
                 <p class="description">
-                    <?php esc_html_e('Automatize a implantação de seus plugins e temas diretamente dos seus repositórios do GitHub — sem uploads manuais e com controle total sobre seu ciclo de lançamento.', 'otter-synca'); ?>
+                    <?php esc_html_e('Automate the deployment of your plugins and themes directly from your GitHub repositories — no manual uploads and with full control over your release cycle.', 'otter-synca'); ?>
                 </p>
             </div>
 
             <div class="otter-synca-premium-features">
                 <div class="otter-synca-feature">
-                    <h3>🚀 <?php esc_html_e('Deploy Automático', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Configure deploys automáticos quando houver novos commits no repositório.', 'otter-synca'); ?></p>
+                    <h3>🚀 <?php esc_html_e('Auto Deploy', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Configure automatic deployments when there are new commits in the repository.', 'otter-synca'); ?></p>
                     <ul>
-                        <li><?php esc_html_e('Deploy automático por webhook', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Agendamento de deploys', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Notificações por email', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Automatic deployment via webhook', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Scheduled deployments', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Email notifications', 'otter-synca'); ?></li>
                     </ul>
                 </div>
 
                 <div class="otter-synca-feature">
-                    <h3>📦 <?php esc_html_e('Múltiplos Repositórios', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Gerencie vários repositórios de uma vez.', 'otter-synca'); ?></p>
+                    <h3>📦 <?php esc_html_e('Multiple Repositories', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Manage multiple repositories at once.', 'otter-synca'); ?></p>
                     <ul>
-                        <li><?php esc_html_e('Interface centralizada', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Deploy em massa', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Grupos de repositórios', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Centralized interface', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Bulk deployment', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Repository groups', 'otter-synca'); ?></li>
                     </ul>
                 </div>
 
                 <div class="otter-synca-feature">
-                    <h3>💾 <?php esc_html_e('Backup Automático', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Mantenha seus arquivos seguros com backups automáticos.', 'otter-synca'); ?></p>
+                    <h3>💾 <?php esc_html_e('Automatic Backup', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Keep your files safe with automatic backups.', 'otter-synca'); ?></p>
                     <ul>
-                        <li><?php esc_html_e('Backup antes do deploy', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Restauração fácil', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Histórico de versões', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Backup before deployment', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Easy restoration', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Version history', 'otter-synca'); ?></li>
                     </ul>
                 </div>
 
                 <div class="otter-synca-feature">
-                    <h3>📊 <?php esc_html_e('Logs Detalhados', 'otter-synca'); ?></h3>
-                    <p><?php esc_html_e('Acompanhe todas as ações com logs detalhados.', 'otter-synca'); ?></p>
+                    <h3>📊 <?php esc_html_e('Detailed Logs', 'otter-synca'); ?></h3>
+                    <p><?php esc_html_e('Track all actions with detailed logs.', 'otter-synca'); ?></p>
                     <ul>
-                        <li><?php esc_html_e('Histórico completo', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Exportação de logs', 'otter-synca'); ?></li>
-                        <li><?php esc_html_e('Filtros avançados', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Complete history', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Log export', 'otter-synca'); ?></li>
+                        <li><?php esc_html_e('Advanced filters', 'otter-synca'); ?></li>
                     </ul>
                 </div>
             </div>
@@ -134,75 +134,75 @@ $pro_active = class_exists('Otter_Synca_Pro');
                         <div class="otter-synca-pricing-header">
                             <h3><?php esc_html_e('Freelancer', 'otter-synca'); ?></h3>
                             <div class="otter-synca-price">
-                                <span class="otter-synca-currency">R$</span>
-                                <span class="otter-synca-amount">249</span>
-                                <span class="otter-synca-period">/ano</span>
+                                <span class="otter-synca-currency">$</span>
+                                <span class="otter-synca-amount">69</span>
+                                <span class="otter-synca-period">/year</span>
                             </div>
                         </div>
                         <ul class="otter-synca-benefits">
-                            <li>✅ <?php esc_html_e('1 Licença', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Deploy automático', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Múltiplos repositórios', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Backup automático', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Logs detalhados', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Notificações por email', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Suporte por email', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('1 License', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Auto deploy', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Multiple repositories', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Automatic backup', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Detailed logs', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Email notifications', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Email support', 'otter-synca'); ?></li>
                         </ul>
                         <a href="https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/" class="button button-primary" target="_blank">
-                            <?php esc_html_e('Escolher Plano', 'otter-synca'); ?>
+                            <?php esc_html_e('Choose Plan', 'otter-synca'); ?>
                         </a>
                     </div>
 
                     <div class="otter-synca-pricing-card otter-synca-pricing-featured">
                         <div class="otter-synca-pricing-header">
-                            <span class="otter-synca-featured-badge"><?php esc_html_e('Mais Popular', 'otter-synca'); ?></span>
-                            <h3><?php esc_html_e('Agência', 'otter-synca'); ?></h3>
+                            <span class="otter-synca-featured-badge"><?php esc_html_e('Most Popular', 'otter-synca'); ?></span>
+                            <h3><?php esc_html_e('Agency', 'otter-synca'); ?></h3>
                             <div class="otter-synca-price">
-                                <span class="otter-synca-currency">R$</span>
-                                <span class="otter-synca-amount">499</span>
-                                <span class="otter-synca-period">/ano</span>
+                                <span class="otter-synca-currency">$</span>
+                                <span class="otter-synca-amount">129</span>
+                                <span class="otter-synca-period">/year</span>
                             </div>
                         </div>
                         <ul class="otter-synca-benefits">
-                            <li>✅ <?php esc_html_e('5 Licenças', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Deploy automático', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Múltiplos repositórios', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Backup automático', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Logs detalhados', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Notificações por email', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Suporte prioritário', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('5 Licenses', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Auto deploy', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Multiple repositories', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Automatic backup', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Detailed logs', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Email notifications', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Priority support', 'otter-synca'); ?></li>
                         </ul>
                         <a href="https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/" class="button button-primary" target="_blank">
-                            <?php esc_html_e('Escolher Plano', 'otter-synca'); ?>
+                            <?php esc_html_e('Choose Plan', 'otter-synca'); ?>
                         </a>
                     </div>
 
                     <div class="otter-synca-pricing-card">
                         <div class="otter-synca-pricing-header">
-                            <h3><?php esc_html_e('Ilimitado', 'otter-synca'); ?></h3>
+                            <h3><?php esc_html_e('Unlimited', 'otter-synca'); ?></h3>
                             <div class="otter-synca-price">
-                                <span class="otter-synca-currency">R$</span>
-                                <span class="otter-synca-amount">999</span>
-                                <span class="otter-synca-period">/ano</span>
+                                <span class="otter-synca-currency">$</span>
+                                <span class="otter-synca-amount">208</span>
+                                <span class="otter-synca-period">/year</span>
                             </div>
                         </div>
                         <ul class="otter-synca-benefits">
-                            <li>✅ <?php esc_html_e('Licenças ilimitadas', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Deploy automático', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Múltiplos repositórios', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Backup automático', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Logs detalhados', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Notificações por email', 'otter-synca'); ?></li>
-                            <li>✅ <?php esc_html_e('Suporte VIP', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Unlimited licenses', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Auto deploy', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Multiple repositories', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Automatic backup', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Detailed logs', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('Email notifications', 'otter-synca'); ?></li>
+                            <li>✅ <?php esc_html_e('VIP support', 'otter-synca'); ?></li>
                         </ul>
                         <a href="https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/" class="button button-primary" target="_blank">
-                            <?php esc_html_e('Escolher Plano', 'otter-synca'); ?>
+                            <?php esc_html_e('Choose Plan', 'otter-synca'); ?>
                         </a>
                     </div>
                 </div>
                 
                 <div class="otter-synca-pricing-note">
-                    <p><strong><?php esc_html_e('Todos os planos incluem as mesmas funcionalidades Pro, diferenciando apenas na quantidade de licenças disponíveis.', 'otter-synca'); ?></strong></p>
+                    <p><strong><?php esc_html_e('All plans include the same Pro features, differing only in the number of available licenses.', 'otter-synca'); ?></strong></p>
                 </div>
             </div>
         </div>

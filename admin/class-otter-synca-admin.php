@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @since      1.0.0
+ * @since      1.0.1
  * @package    Otter_Synca
  * @subpackage Otter_Synca/admin
  */
@@ -12,7 +12,7 @@ class Otter_Synca_Admin {
     /**
      * The ID of this plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   private
      * @var      string    $plugin_name    The ID of this plugin.
      */
@@ -21,7 +21,7 @@ class Otter_Synca_Admin {
     /**
      * The version of this plugin.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @access   private
      * @var      string    $version    The current version of this plugin.
      */
@@ -30,7 +30,7 @@ class Otter_Synca_Admin {
     /**
      * Initialize the class and set its properties.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      * @param    string    $plugin_name       The name of this plugin.
      * @param    string    $version    The version of this plugin.
      */
@@ -99,7 +99,7 @@ class Otter_Synca_Admin {
             'deployed_at_text' => __('Deployed at:', 'otter-synca'),
             'required_fields_message' => __('Please fill in all required fields.', 'otter-synca'),
             'invalid_repository_message' => __('Invalid repository format. Use format: owner/repository', 'otter-synca'),
-            'manual_deploy_message' => __('O deploy só pode ser iniciado manualmente.', 'otter-synca'),
+            'manual_deploy_message' => __('Deploy can only be started manually.', 'otter-synca'),
             'debug' => WP_DEBUG
         ));
     }
@@ -129,13 +129,13 @@ class Otter_Synca_Admin {
      */
     public function register_settings() 
     {
-        register_setting('otter_synca_options', 'otter_synca_github_token');
-        register_setting('otter_synca_options', 'otter_synca_repository');
-        register_setting('otter_synca_options', 'otter_synca_branch');
-        register_setting('otter_synca_options', 'otter_synca_deploy_type');
-        register_setting('otter_synca_options', 'otter_synca_target_slug');
-        register_setting('otter_synca_options', 'otter_synca_auto_deploy');
-        register_setting('otter_synca_options', 'otter_synca_webhook_secret');
+        register_setting('otter_synca_options', 'otter_synca_github_token', 'sanitize_text_field');
+        register_setting('otter_synca_options', 'otter_synca_repository', 'sanitize_text_field');
+        register_setting('otter_synca_options', 'otter_synca_branch', 'sanitize_text_field');
+        register_setting('otter_synca_options', 'otter_synca_deploy_type', 'sanitize_text_field');
+        register_setting('otter_synca_options', 'otter_synca_target_slug', 'sanitize_text_field');
+        register_setting('otter_synca_options', 'otter_synca_auto_deploy', 'sanitize_text_field');
+        register_setting('otter_synca_options', 'otter_synca_webhook_secret', 'sanitize_text_field');
     }
 
     /**
@@ -151,63 +151,63 @@ class Otter_Synca_Admin {
     /**
      * Handle the deploy action via AJAX.
      *
-     * @since    1.0.0
+     * @since    1.0.1
      */
     public function handle_deploy() {
-        // Verifica o nonce primeiro
+        // Verify nonce first
         if (!check_ajax_referer('otter_synca_nonce', 'nonce', false)) {
-            wp_send_json_error(__('Erro de segurança: nonce inválido.', 'otter-synca'));
+            wp_send_json_error(__('Security error: invalid nonce.', 'otter-synca'));
             return;
         }
 
         if (!current_user_can('manage_options')) {
-            wp_send_json_error(__('Você não tem permissões suficientes para acessar esta página.', 'otter-synca'));
+            wp_send_json_error(__('You do not have sufficient permissions to access this page.', 'otter-synca'));
             return;
         }
 
-        // Verifica se a requisição veio do botão de deploy
+        // Check if request came from deploy button
         if (!isset($_POST['action']) || $_POST['action'] !== 'otter_synca_deploy') {
-            wp_send_json_error(__('Requisição inválida.', 'otter-synca'));
+            wp_send_json_error(__('Invalid request.', 'otter-synca'));
             return;
         }
 
-        // Verifica se o deploy foi iniciado manualmente
+        // Check if deploy was started manually
         if (!isset($_POST['manual_deploy']) || $_POST['manual_deploy'] !== 'true') {
-            wp_send_json_error(__('O deploy só pode ser iniciado manualmente através do botão.', 'otter-synca'));
+            wp_send_json_error(__('Deploy can only be started manually through the button.', 'otter-synca'));
             return;
         }
 
-        // Verifica se o evento foi realmente um clique
+        // Check if event was actually a click
         if (!isset($_POST['event_type']) || $_POST['event_type'] !== 'click') {
-            wp_send_json_error(__('O deploy só pode ser iniciado através de um clique manual.', 'otter-synca'));
+            wp_send_json_error(__('Deploy can only be started through a manual click.', 'otter-synca'));
             return;
         }
 
-        // Verifica se a requisição veio de um clique real
+        // Check if request came from a real click
         if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest') {
-            wp_send_json_error(__('Requisição inválida.', 'otter-synca'));
+            wp_send_json_error(__('Invalid request.', 'otter-synca'));
             return;
         }
 
-        // Verifica se a requisição veio do formulário correto
+        // Check if request came from correct form
         if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], admin_url('admin.php?page=otter-synca')) === false) {
-            wp_send_json_error(__('Requisição inválida. O deploy só pode ser iniciado a partir da página do plugin.', 'otter-synca'));
+            wp_send_json_error(__('Invalid request. Deploy can only be started from the plugin page.', 'otter-synca'));
             return;
         }
 
-        // Verifica se o usuário está logado e tem permissão
+        // Check if user is logged in and has permission
         if (!is_user_logged_in() || !current_user_can('manage_options')) {
-            wp_send_json_error(__('Você não tem permissão para realizar esta ação.', 'otter-synca'));
+            wp_send_json_error(__('You do not have permission to perform this action.', 'otter-synca'));
             return;
         }
 
-        // Verifica se não há outro deploy em andamento
+        // Check if there's another deploy in progress
         $last_deploy = get_option('otter_synca_last_deploy');
         if (!empty($last_deploy) && isset($last_deploy['timestamp'])) {
             $last_deploy_time = strtotime($last_deploy['timestamp']);
             $current_time = time();
-            if ($current_time - $last_deploy_time < 30) { // 30 segundos de intervalo mínimo
-                wp_send_json_error(__('Aguarde 30 segundos antes de iniciar um novo deploy.', 'otter-synca'));
+            if ($current_time - $last_deploy_time < 30) { // 30 seconds minimum interval
+                wp_send_json_error(__('Wait 30 seconds before starting a new deploy.', 'otter-synca'));
                 return;
             }
         }
@@ -240,12 +240,12 @@ class Otter_Synca_Admin {
             
             if ($branch_status !== 200) {
                 /* translators: %s: branch name */
-                throw new Exception(sprintf(__('Branch "%s" não encontrada no repositório. Verifique se a branch está correta e se você tem permissão para acessá-la.', 'otter-synca'), $branch));
+                throw new Exception(sprintf(__('Branch "%s" not found in repository. Verify that the branch is correct and you have permission to access it.', 'otter-synca'), $branch));
             }
 
             $branch_data = json_decode(wp_remote_retrieve_body($branch_response), true);
             if (empty($branch_data) || !isset($branch_data['commit']['sha'])) {
-                throw new Exception(__('Não foi possível obter informações da branch.', 'otter-synca'));
+                throw new Exception(__('Could not get branch information.', 'otter-synca'));
             }
 
             $commit_sha = $branch_data['commit']['sha'];
@@ -265,7 +265,7 @@ class Otter_Synca_Admin {
 
             $zip_content = wp_remote_retrieve_body($response);
             if (empty($zip_content)) {
-                throw new Exception(__('Falha ao baixar o repositório.', 'otter-synca'));
+                throw new Exception(__('Failed to download repository.', 'otter-synca'));
             }
 
             // Verifica o conteúdo do ZIP
@@ -283,7 +283,7 @@ class Otter_Synca_Admin {
                 // Get the first directory (GitHub adds a hash to the directory name)
                 $extracted_dirs = glob($extract_path . '*', GLOB_ONLYDIR);
                 if (empty($extracted_dirs)) {
-                    throw new Exception(__('Falha ao extrair o repositório.', 'otter-synca'));
+                    throw new Exception(__('Failed to extract repository.', 'otter-synca'));
                 }
                 $source_dir = $extracted_dirs[0];
 
@@ -293,7 +293,7 @@ class Otter_Synca_Admin {
                     $git_head = file_get_contents($git_head_file);
                     if (strpos($git_head, $commit_sha) === false) {
                         /* translators: %s: branch name */
-                        throw new Exception(sprintf(__('O conteúdo baixado não corresponde ao commit da branch "%s".', 'otter-synca'), $branch));
+                        throw new Exception(sprintf(__('Downloaded content does not match the commit from branch "%s".', 'otter-synca'), $branch));
                     }
                 }
 
@@ -383,36 +383,36 @@ class Otter_Synca_Admin {
      * @since    1.0.0
      */
     public function test_webhook() {
-        // Verifica o nonce primeiro
+        // Verify nonce first
         if (!check_ajax_referer('otter_synca_nonce', 'nonce', false)) {
-            wp_send_json_error(__('Erro de segurança: nonce inválido.', 'otter-synca'));
+            wp_send_json_error(__('Security error: invalid nonce.', 'otter-synca'));
             return;
         }
 
         if (!current_user_can('manage_options')) {
-            wp_send_json_error(__('Você não tem permissões suficientes para acessar esta página.', 'otter-synca'));
+            wp_send_json_error(__('You do not have sufficient permissions to access this page.', 'otter-synca'));
             return;
         }
 
-        // Verifica se a requisição veio do botão de testar o webhook
+        // Check if request came from test webhook button
         if (!isset($_POST['action']) || $_POST['action'] !== 'otter_synca_test_webhook') {
-            wp_send_json_error(__('Requisição inválida.', 'otter-synca'));
+            wp_send_json_error(__('Invalid request.', 'otter-synca'));
             return;
         }
 
-        // Verifica se o usuário está logado e tem permissão
+        // Check if user is logged in and has permission
         if (!is_user_logged_in() || !current_user_can('manage_options')) {
-            wp_send_json_error(__('Você não tem permissão para realizar esta ação.', 'otter-synca'));
+            wp_send_json_error(__('You do not have permission to perform this action.', 'otter-synca'));
             return;
         }
 
-        // Verifica se não há outro teste de webhook em andamento
+        // Check if there's another webhook test in progress
         $last_test = get_option('otter_synca_last_test');
         if (!empty($last_test) && isset($last_test['timestamp'])) {
             $last_test_time = strtotime($last_test['timestamp']);
             $current_time = time();
-            if ($current_time - $last_test_time < 30) { // 30 segundos de intervalo mínimo
-                wp_send_json_error(__('Aguarde 30 segundos antes de iniciar um novo teste de webhook.', 'otter-synca'));
+            if ($current_time - $last_test_time < 30) { // 30 seconds minimum interval
+                wp_send_json_error(__('Wait 30 seconds before starting a new webhook test.', 'otter-synca'));
                 return;
             }
         }

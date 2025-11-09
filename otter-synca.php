@@ -3,14 +3,14 @@
  * The plugin bootstrap file
  *
  * @link              https://ottersynca.com
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Otter_Synca
  *
  * @wordpress-plugin
  * Plugin Name:       OtterSynca – Git Deployment & Sync Tool
  * Plugin URI:        https://ottersynca.com
- * Description:       Deploy WordPress plugins and themes directly from GitHub repositories. Automatize your workflow with automatic deploys, multiple repositories, backups, and detailed logs. Upgrade to <a href="https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/" target="_blank">OtterSynca Pro</a> for advanced features. Plans starting at R$249/year.
- * Version:           1.0.0
+ * Description:       Deploy WordPress plugins and themes directly from GitHub repositories. Automatize your workflow with automatic deploys, multiple repositories, backups, and detailed logs. Upgrade to <a href="https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/" target="_blank">OtterSynca Pro</a> for advanced features. Plans starting at $69/year.
+ * Version:           1.0.1
  * Author:            Cyfer Development
  * Author URI:        https://cyfer.com.br
  * License:           GPL-2.0+
@@ -30,7 +30,7 @@ if (!defined('WPINC')) {
 /**
  * Currently plugin version.
  */
-define('OTTER_SYNCA_VERSION', '1.0.0');
+define('OTTER_SYNCA_VERSION', '1.0.1');
 define('OTTER_SYNCA_PLUGIN_NAME', 'otter-synca');
 define('OTTER_SYNCA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('OTTER_SYNCA_PLUGIN_URL', plugin_dir_url(__FILE__));
