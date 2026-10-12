@@ -22,6 +22,8 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
         <h2 class="otter-synca-card-title"><?php esc_html_e('Plugin Settings', 'otter-synca'); ?></h2>
     </div>
 
+    <?php settings_errors(); ?>
+
     <form method="post" action="options.php">
         <?php
         settings_fields('otter_synca_options');
@@ -38,7 +40,9 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                            id="otter_synca_github_token" 
                            name="otter_synca_github_token" 
                            value="<?php echo esc_attr(get_option('otter_synca_github_token')); ?>" 
-                           class="regular-text" />
+                           class="regular-text"
+                           autocomplete="off"
+                           required />
                     <p class="description">
                         <?php esc_html_e('GitHub personal access token with repository permissions.', 'otter-synca'); ?>
                     </p>
@@ -55,7 +59,8 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                            name="otter_synca_repository" 
                            value="<?php echo esc_attr(get_option('otter_synca_repository')); ?>" 
                            class="regular-text" 
-                           placeholder="username/repository" />
+                           placeholder="username/repository"
+                           required />
                     <p class="description">
                         <?php esc_html_e('Repository name in the format username/repository.', 'otter-synca'); ?>
                     </p>
@@ -71,7 +76,8 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                            id="otter_synca_branch" 
                            name="otter_synca_branch" 
                            value="<?php echo esc_attr(get_option('otter_synca_branch', 'main')); ?>" 
-                           class="regular-text" />
+                           class="regular-text"
+                           required />
                     <p class="description">
                         <?php esc_html_e('Repository branch to deploy.', 'otter-synca'); ?>
                     </p>
@@ -106,7 +112,9 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                            id="otter_synca_target_slug" 
                            name="otter_synca_target_slug" 
                            value="<?php echo esc_attr(get_option('otter_synca_target_slug')); ?>" 
-                           class="regular-text" />
+                           class="regular-text"
+                           pattern="[a-z0-9][a-z0-9_-]{0,99}"
+                           required />
                     <p class="description">
                         <?php esc_html_e('Target plugin or theme slug.', 'otter-synca'); ?>
                     </p>
@@ -122,26 +130,27 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                         <input type="checkbox" 
                                id="otter_synca_auto_deploy" 
                                name="otter_synca_auto_deploy" 
-                               value="1" 
-                               disabled />
+                               value="1"
+                               <?php checked(get_option('otter_synca_auto_deploy'), 1); ?>
+                               <?php disabled(!class_exists('Otter_Synca_Pro')); ?> />
                         <?php esc_html_e('Enable automatic deployment via webhook', 'otter-synca'); ?>
                     </label>
                     
                     <?php if (!class_exists('Otter_Synca_Pro')): ?>
                         <!-- Mensagem para usuários sem o Pro -->
-                        <div style="margin-top: 8px; padding: 10px; background: #fffbe5; border: 1px solid #ffe066; border-radius: 4px; color: #b38f00; max-width: 400px;">
+                        <div class="otter-synca-setting-notice otter-synca-setting-notice-warning">
                             <strong><?php esc_html_e('Exclusive Pro feature!', 'otter-synca'); ?></strong><br>
                             <?php esc_html_e('Auto deploy is available only in OtterSynca Pro.', 'otter-synca'); ?>
-                            <a href="https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/" target="_blank" class="button button-primary" style="margin-top: 8px; margin-left: 0; display: inline-block;">
+                            <a href="https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/" target="_blank" rel="noopener noreferrer" class="button button-primary">
                                 <?php esc_html_e('Learn about OtterSynca Pro', 'otter-synca'); ?>
                             </a>
                         </div>
                     <?php else: ?>
                         <!-- Mensagem para usuários com o Pro ativo -->
-                        <div style="margin-top: 8px; padding: 10px; background: #e5f3ff; border: 1px solid #66b3ff; border-radius: 4px; color: #0066cc; max-width: 400px;">
+                        <div class="otter-synca-setting-notice otter-synca-setting-notice-info">
                             <strong><?php esc_html_e('OtterSynca Pro active!', 'otter-synca'); ?></strong><br>
                             <?php esc_html_e('Configure auto deploy on the OtterSynca Pro page.', 'otter-synca'); ?>
-                            <a href="<?php echo admin_url('admin.php?page=otter-synca-pro'); ?>" class="button button-primary" style="margin-top: 8px; margin-left: 0; display: inline-block;">
+                            <a href="<?php echo esc_url(admin_url('admin.php?page=otter-synca-pro')); ?>" class="button button-primary">
                                 <?php esc_html_e('Configure in Pro', 'otter-synca'); ?>
                             </a>
                         </div>
@@ -153,8 +162,8 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                 </td>
             </tr>
 
-            <!-- Campos ocultos na versão free - relacionados ao deploy automático -->
-            <tr style="display: none;">
+            <?php if (class_exists('Otter_Synca_Pro')): ?>
+            <tr>
                 <th scope="row">
                     <label for="otter_synca_webhook_secret"><?php esc_html_e('Webhook Secret', 'otter-synca'); ?></label>
                 </th>
@@ -165,7 +174,10 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                                name="otter_synca_webhook_secret" 
                                value="<?php echo esc_attr(get_option('otter_synca_webhook_secret')); ?>" 
                                class="regular-text" 
-                               placeholder="<?php esc_attr_e('Click "Generate Secret" or type manually', 'otter-synca'); ?>" />
+                               minlength="32"
+                               autocomplete="new-password"
+                               placeholder="<?php esc_attr_e('Click "Generate Secret" or type manually', 'otter-synca'); ?>"
+                               required />
                         <button type="button" class="button button-secondary" id="generate-webhook-secret">
                             <?php esc_html_e('Generate Secret', 'otter-synca'); ?>
                         </button>
@@ -176,7 +188,7 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                 </td>
             </tr>
 
-            <tr style="display: none;">
+            <tr>
                 <th scope="row">
                     <label><?php esc_html_e('Webhook URL', 'otter-synca'); ?></label>
                 </th>
@@ -195,11 +207,12 @@ $last_deploy = get_option('otter_synca_last_deploy', array());
                         2. <?php esc_html_e('Click "Add webhook"', 'otter-synca'); ?><br>
                         3. <?php esc_html_e('Paste the URL above in the "Payload URL" field', 'otter-synca'); ?><br>
                         4. <?php esc_html_e('Select "Just the push event"', 'otter-synca'); ?><br>
-                        5. <?php esc_html_e('Add the secret above (optional)', 'otter-synca'); ?><br>
+                        5. <?php esc_html_e('Add the required secret shown above', 'otter-synca'); ?><br>
                         6. <?php esc_html_e('Click "Add webhook"', 'otter-synca'); ?>
                     </p>
                 </td>
             </tr>
+            <?php endif; ?>
         </table>
 
         <?php submit_button(esc_html__('Save Settings', 'otter-synca')); ?>

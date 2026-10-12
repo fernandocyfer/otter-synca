@@ -4,9 +4,9 @@ Donate link:       https://buymeacoffee.com/cyfer
 Description:       Deploy WordPress plugins and themes directly from GitHub repositories. Automatize your workflow with automatic deploys, multiple repositories, backups, and detailed logs. Upgrade to OtterSynca Pro for advanced features.
 Tags: deployment, git, github, deploy, sync, automation, backup, logs
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP:      7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 textdomain: otter-synca
@@ -17,7 +17,7 @@ Deploy WordPress plugins and themes directly from GitHub repositories.
 
 OtterSynca is a powerful WordPress plugin that allows you to deploy your plugins and themes directly from GitHub repositories. With a simple and intuitive interface, you can easily keep your WordPress installations up to date with your latest code changes.
 
-**🚀 Upgrade to [OtterSynca Pro](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/) for advanced features like automatic deploys, multiple repositories, backups, and detailed logs.**
+**🚀 Get [OtterSynca Pro](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/) and unlock automatic deploys, multiple repositories, backups, and detailed logs.**
 
 = Features =
 = Free Version Features =
@@ -41,14 +41,12 @@ OtterSynca is a powerful WordPress plugin that allows you to deploy your plugins
 * **Webhook Integration**: GitHub webhook support for automatic triggers
 * **Priority Support**: Get help when you need it most
 
-= Pro Plans =
+= OtterSynca Pro =
 
-* **Freelance** - 5 Licenses – $69/year
-* **Agency** - 20 Licenses – $129/year  
-* **Unlimited** – Unlimited Licenses – $208/year
+Unlock all OtterSynca Pro features.
 
 
-[View all plans and features →](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/)
+[Get OtterSynca Pro →](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/)
 
 == Installation ==
 
@@ -79,7 +77,7 @@ Yes, the token is stored securely in the WordPress options table and is never ex
 
 = How do I upgrade to OtterSynca Pro? =
 
-Visit our [pricing page](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/) to choose the plan that best fits your needs. After purchase, you'll receive the Pro addon with installation instructions.
+Get [OtterSynca Pro](https://plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/). After purchase, you'll receive the Pro addon with installation instructions.
 
 = What's the difference between Free and Pro? =
 
@@ -94,6 +92,16 @@ The free version includes basic deployment features, while Pro adds automatic de
 
 == Changelog ==
 
+= 1.0.2 =
+* Compatibility verified with WordPress 7.1
+* Redesigned the Help tab
+* Redesigned the Premium tab
+* Redesigned the Buy Me a Coffee tab
+* Simplified the OtterSynca Pro presentation
+* Hardened ZIP extraction, deployment paths, webhook authentication, and concurrent deploy handling
+* Added streamed downloads, atomic target replacement, and server-side settings validation
+* Improved deploy and webhook feedback in the admin interface
+
 = 1.0.1
 * Internationalization
 * Security improvements 
@@ -101,9 +109,12 @@ The free version includes basic deployment features, while Pro adds automatic de
 = 1.0.0 =
 * Initial release
 * Added Pro version information
-* Updated pricing and features
+* Updated Pro features
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Compatibility with WordPress 7.1 and improved Help information.
 
 = 1.0.1
 The default language is now English and security improvements.

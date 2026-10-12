@@ -143,6 +143,30 @@
     margin-top: 8px;
 }
 
+.otter-synca-admin .otter-synca-setting-notice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 400px;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 6px;
+}
+
+.otter-synca-admin .otter-synca-setting-notice-warning {
+    color: #785900;
+    background: #fff8db;
+    border-color: #dba617;
+}
+
+.otter-synca-admin .otter-synca-setting-notice-info {
+    color: #0a4b78;
+    background: #f0f6fc;
+    border-color: #72aee6;
+}
+
 /* Status Badges - Prefixado com .otter-synca-admin */
 .otter-synca-admin .otter-synca-status {
     display: inline-block;
@@ -152,6 +176,10 @@
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 10px;
+}
+
+.otter-synca-admin .otter-synca-status:empty {
+    display: none;
 }
 
 .otter-synca-admin .otter-synca-status-success {
@@ -172,6 +200,20 @@
     border: 1px solid #ffeaa7;
 }
 
+.otter-synca-admin .otter-synca-test-result {
+    display: none;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.otter-synca-admin .otter-synca-test-result.success {
+    color: var(--otter-success);
+}
+
+.otter-synca-admin .otter-synca-test-result.error {
+    color: var(--otter-error);
+}
+
 /* Buttons - Prefixado com .otter-synca-admin */
 .otter-synca-admin .button {
     transition: var(--otter-transition);
@@ -187,84 +229,227 @@
     border-color: var(--otter-secondary);
 }
 
-/* Premium Features - Prefixado com .otter-synca-admin */
-.otter-synca-admin .otter-synca-premium-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin: 30px 0;
+/* Buy Me a Coffee - all selectors are scoped to the OtterSynca admin wrapper. */
+.otter-synca-admin .otter-synca-coffee-page {
+    width: 100%;
+    max-width: 1180px;
+    color: var(--otter-text);
 }
 
-.otter-synca-admin .otter-synca-feature {
-    background: var(--otter-card-bg);
-    border-radius: var(--otter-radius);
-    padding: 24px;
-    box-shadow: var(--otter-shadow);
-    transition: var(--otter-transition);
+.otter-synca-admin .otter-synca-coffee-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 150px;
+    padding: 36px 40px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(135deg, #135e96 0%, #2271b1 55%, #3582c4 100%);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(19, 94, 150, 0.2);
 }
 
-.otter-synca-admin .otter-synca-feature:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+.otter-synca-admin .otter-synca-coffee-hero::after {
+    position: absolute;
+    top: -75px;
+    right: 90px;
+    width: 220px;
+    height: 220px;
+    content: "";
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
 }
 
-.otter-synca-admin .otter-synca-feature h3 {
+.otter-synca-admin .otter-synca-coffee-hero h2 {
+    position: relative;
+    z-index: 1;
+    margin: 6px 0 10px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.15;
+}
+
+.otter-synca-admin .otter-synca-coffee-hero p {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 15px;
+}
+
+.otter-synca-admin .otter-synca-coffee-hero > .dashicons {
+    position: relative;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 70px;
+}
+
+.otter-synca-admin .otter-synca-coffee-eyebrow {
+    display: inline-block;
     color: var(--otter-primary);
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-/* Help Section - Prefixado com .otter-synca-admin */
-.otter-synca-admin .otter-synca-help-steps {
-    display: grid;
-    gap: 24px;
-    margin: 30px 0;
+.otter-synca-admin .otter-synca-coffee-hero .otter-synca-coffee-eyebrow {
+    position: relative;
+    z-index: 1;
+    color: #dbeafe;
 }
 
-.otter-synca-admin .otter-synca-help-step {
+.otter-synca-admin .otter-synca-coffee-section {
+    padding: 28px;
+    margin-bottom: 28px;
     background: var(--otter-card-bg);
-    border-radius: var(--otter-radius);
-    padding: 24px;
+    border: 1px solid var(--otter-border);
+    border-radius: 12px;
     box-shadow: var(--otter-shadow);
 }
 
-.otter-synca-admin .otter-synca-help-step h3 {
-    color: var(--otter-primary);
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 600;
+.otter-synca-admin .otter-synca-coffee-section-heading {
+    margin-bottom: 22px;
 }
 
-/* Coffee Options - Prefixado com .otter-synca-admin */
+.otter-synca-admin .otter-synca-coffee-section-heading h2 {
+    margin: 4px 0 0;
+    color: var(--otter-text);
+    font-size: 21px;
+}
+
 .otter-synca-admin .otter-synca-coffee-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-    margin: 30px 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .otter-synca-admin .otter-synca-coffee-option {
-    background: var(--otter-card-bg);
-    border-radius: var(--otter-radius);
-    padding: 24px;
-    box-shadow: var(--otter-shadow);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 24px 24px;
     text-align: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
     transition: var(--otter-transition);
 }
 
 .otter-synca-admin .otter-synca-coffee-option:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: #b8d7f0;
+    box-shadow: 0 8px 20px rgba(34, 113, 177, 0.1);
+    transform: translateY(-3px);
 }
 
-.otter-synca-admin .otter-synca-coffee-option .price {
-    font-size: 28px;
-    font-weight: 700;
+.otter-synca-admin .otter-synca-coffee-option-featured {
+    background: #f6faff;
+    border-color: var(--otter-primary);
+}
+
+.otter-synca-admin .otter-synca-coffee-option > .dashicons {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 14px;
     color: var(--otter-primary);
-    margin: 16px 0;
+    font-size: 42px;
+}
+
+.otter-synca-admin .otter-synca-coffee-double-icon {
+    display: inline-flex;
+    gap: 2px;
+    margin-bottom: 14px;
+    color: var(--otter-primary);
+}
+
+.otter-synca-admin .otter-synca-coffee-double-icon .dashicons {
+    width: 36px;
+    height: 42px;
+    font-size: 42px;
+}
+
+.otter-synca-admin .otter-synca-coffee-option h3 {
+    margin: 0;
+    color: var(--otter-text);
+    font-size: 17px;
+}
+
+.otter-synca-admin .otter-synca-coffee-price {
+    margin: 12px 0;
+    color: var(--otter-primary);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.otter-synca-admin .otter-synca-coffee-option p {
+    flex: 1;
+    margin: 0 0 20px;
+    color: var(--otter-text-light);
+    line-height: 1.5;
+}
+
+.otter-synca-admin .otter-synca-coffee-option .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 38px;
+}
+
+.otter-synca-admin .otter-synca-coffee-thanks {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    align-items: center;
+    padding: 26px 28px;
+    background: #fff;
+    border: 1px solid var(--otter-border);
+    border-left: 4px solid var(--otter-primary);
+    border-radius: 10px;
+    box-shadow: var(--otter-shadow);
+}
+
+.otter-synca-admin .otter-synca-coffee-thanks > .dashicons {
+    width: 38px;
+    height: 38px;
+    color: #d63638;
+    font-size: 38px;
+}
+
+.otter-synca-admin .otter-synca-coffee-thanks h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.otter-synca-admin .otter-synca-coffee-thanks p {
+    margin: 0;
+    color: var(--otter-text-light);
+}
+
+@media screen and (max-width: 960px) {
+    .otter-synca-admin .otter-synca-coffee-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .otter-synca-admin .otter-synca-coffee-hero {
+        padding: 28px 24px;
+    }
+
+    .otter-synca-admin .otter-synca-coffee-hero > .dashicons {
+        display: none;
+    }
+
+    .otter-synca-admin .otter-synca-coffee-section {
+        padding: 22px 18px;
+    }
 }
 
 /* Deploy Status - Prefixado com .otter-synca-admin */
@@ -363,69 +548,535 @@
     }
 }
 
-/* Premium Page - Prefixado com .otter-synca-admin */
-.otter-synca-admin .otter-synca-premium-content {
-    max-width: 800px;
-    margin: 20px 0;
+/* Premium Page - all selectors are scoped to the OtterSynca admin wrapper. */
+.otter-synca-admin .otter-synca-premium-page {
+    width: 100%;
+    max-width: 1180px;
+    color: var(--otter-text);
 }
 
-.otter-synca-admin .otter-synca-premium-header {
-    text-align: center;
-    margin-bottom: 40px;
+.otter-synca-admin .otter-synca-premium-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 40px;
+    align-items: center;
+    min-height: 190px;
+    padding: 40px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(135deg, #135e96 0%, #2271b1 55%, #3582c4 100%);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(19, 94, 150, 0.2);
 }
 
-.otter-synca-admin .otter-synca-premium-cta {
-    text-align: center;
+.otter-synca-admin .otter-synca-premium-hero::after {
+    position: absolute;
+    top: -100px;
+    right: 90px;
+    width: 280px;
+    height: 280px;
+    content: "";
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
 }
 
-.otter-synca-admin .otter-synca-premium-cta .button {
+.otter-synca-admin .otter-synca-premium-hero-content,
+.otter-synca-admin .otter-synca-premium-hero-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.otter-synca-admin .otter-synca-premium-hero h2 {
+    max-width: 650px;
+    margin: 6px 0 12px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.15;
+}
+
+.otter-synca-admin .otter-synca-premium-hero p {
+    max-width: 680px;
+    margin: 0 0 22px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.otter-synca-admin .otter-synca-premium-eyebrow {
+    display: inline-block;
+    color: var(--otter-primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.otter-synca-admin .otter-synca-premium-hero .otter-synca-premium-eyebrow {
+    color: #dbeafe;
+}
+
+.otter-synca-admin .otter-synca-premium-hero-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 20px;
+    background: #fff;
+    border-color: #fff;
+    color: var(--otter-primary);
+    font-weight: 700;
+}
+
+.otter-synca-admin .otter-synca-premium-hero-button:hover,
+.otter-synca-admin .otter-synca-premium-hero-button:focus {
+    background: #f0f6fc;
+    border-color: #f0f6fc;
+    color: var(--otter-secondary);
+}
+
+.otter-synca-admin .otter-synca-premium-hero-icon {
+    width: 78px;
+    height: 78px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 78px;
+}
+
+.otter-synca-admin .otter-synca-premium-status {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.otter-synca-admin .otter-synca-premium-status-active {
+    color: #dff7e5;
+    background: rgba(0, 163, 42, 0.22);
+    border: 1px solid rgba(223, 247, 229, 0.38);
+}
+
+.otter-synca-admin .otter-synca-premium-section {
+    padding: 28px;
+    margin-bottom: 28px;
+    background: var(--otter-card-bg);
+    border: 1px solid var(--otter-border);
+    border-radius: 12px;
+    box-shadow: var(--otter-shadow);
+}
+
+.otter-synca-admin .otter-synca-premium-section-heading {
+    margin-bottom: 22px;
+}
+
+.otter-synca-admin .otter-synca-premium-section-heading h2 {
+    margin: 4px 0 0;
+    color: var(--otter-text);
+    font-size: 21px;
+}
+
+.otter-synca-admin .otter-synca-premium-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.otter-synca-admin .otter-synca-premium-feature {
+    position: relative;
+    padding: 24px 24px 24px 78px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.otter-synca-admin .otter-synca-premium-feature > .dashicons {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 36px;
+    height: 36px;
+    color: var(--otter-primary);
+    font-size: 36px;
+}
+
+.otter-synca-admin .otter-synca-premium-feature h3 {
+    margin: 0 0 8px;
+    color: var(--otter-text);
     font-size: 16px;
-    padding: 8px 24px;
-    height: auto;
 }
 
-/* Help Page - Prefixado com .otter-synca-admin */
-.otter-synca-admin .otter-synca-help-content {
-    max-width: 800px;
-    margin: 20px 0;
+.otter-synca-admin .otter-synca-premium-feature p {
+    margin: 0 0 14px;
+    color: var(--otter-text-light);
+    line-height: 1.5;
+}
+
+.otter-synca-admin .otter-synca-premium-feature ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.otter-synca-admin .otter-synca-premium-feature li {
+    margin-bottom: 7px;
+    color: var(--otter-text-light);
+}
+
+.otter-synca-admin .otter-synca-premium-action {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 26px 28px;
+    background: #fff;
+    border: 1px solid var(--otter-border);
+    border-left: 4px solid var(--otter-success);
+    border-radius: 10px;
+    box-shadow: var(--otter-shadow);
+}
+
+.otter-synca-admin .otter-synca-premium-action > .dashicons {
+    width: 38px;
+    height: 38px;
+    color: var(--otter-success);
+    font-size: 38px;
+}
+
+.otter-synca-admin .otter-synca-premium-action h2 {
+    margin: 3px 0 5px;
+    font-size: 19px;
+}
+
+.otter-synca-admin .otter-synca-premium-action p {
+    margin: 0;
+    color: var(--otter-text-light);
+}
+
+.otter-synca-admin .otter-synca-premium-offer {
+    border-left-color: var(--otter-primary);
+}
+
+.otter-synca-admin .otter-synca-premium-offer > .dashicons {
+    color: var(--otter-primary);
+}
+
+.otter-synca-admin .otter-synca-premium-action .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 18px;
+}
+
+.otter-synca-admin .otter-synca-premium-action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+@media screen and (max-width: 960px) {
+    .otter-synca-admin .otter-synca-premium-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .otter-synca-admin .otter-synca-premium-hero {
+        grid-template-columns: 1fr;
+        padding: 28px 24px;
+    }
+
+    .otter-synca-admin .otter-synca-premium-hero-icon {
+        display: none;
+    }
+
+    .otter-synca-admin .otter-synca-premium-section {
+        padding: 22px 18px;
+    }
+
+    .otter-synca-admin .otter-synca-premium-feature {
+        padding: 22px;
+    }
+
+    .otter-synca-admin .otter-synca-premium-feature > .dashicons {
+        position: static;
+        margin-bottom: 14px;
+    }
+
+    .otter-synca-admin .otter-synca-premium-action {
+        grid-template-columns: auto 1fr;
+    }
+
+    .otter-synca-admin .otter-synca-premium-action > .button,
+    .otter-synca-admin .otter-synca-premium-action-buttons {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Help Page - all selectors are scoped to the OtterSynca admin wrapper. */
+.otter-synca-admin .otter-synca-help-page {
+    width: 100%;
+    max-width: 1180px;
+    color: var(--otter-text);
+}
+
+.otter-synca-admin .otter-synca-help-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 150px;
+    padding: 36px 40px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(135deg, #135e96 0%, #2271b1 55%, #3582c4 100%);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(19, 94, 150, 0.2);
+}
+
+.otter-synca-admin .otter-synca-help-hero::after {
+    position: absolute;
+    top: -75px;
+    right: 90px;
+    width: 220px;
+    height: 220px;
+    content: "";
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.otter-synca-admin .otter-synca-help-hero h2 {
+    position: relative;
+    z-index: 1;
+    margin: 6px 0 10px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.15;
+}
+
+.otter-synca-admin .otter-synca-help-hero p {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 15px;
+}
+
+.otter-synca-admin .otter-synca-help-hero > .dashicons {
+    position: relative;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 70px;
+}
+
+.otter-synca-admin .otter-synca-help-eyebrow {
+    display: inline-block;
+    color: var(--otter-primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.otter-synca-admin .otter-synca-help-hero .otter-synca-help-eyebrow {
+    position: relative;
+    z-index: 1;
+    color: #dbeafe;
 }
 
 .otter-synca-admin .otter-synca-help-section {
-    margin-bottom: 40px;
+    padding: 28px;
+    margin-bottom: 28px;
+    background: var(--otter-card-bg);
+    border: 1px solid var(--otter-border);
+    border-radius: 12px;
+    box-shadow: var(--otter-shadow);
+}
+
+.otter-synca-admin .otter-synca-help-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.otter-synca-admin .otter-synca-help-section-heading h2 {
+    margin: 4px 0 0;
+    color: var(--otter-text);
+    font-size: 21px;
+}
+
+.otter-synca-admin .otter-synca-help-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.otter-synca-admin .otter-synca-help-step {
+    position: relative;
+    padding: 24px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.otter-synca-admin .otter-synca-help-step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 16px;
+    color: #fff;
+    background: var(--otter-primary);
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(34, 113, 177, 0.22);
+}
+
+.otter-synca-admin .otter-synca-help-step h3 {
+    margin: 0 0 10px;
+    color: var(--otter-text);
+    font-size: 16px;
+}
+
+.otter-synca-admin .otter-synca-help-step p {
+    color: var(--otter-text-light);
+}
+
+.otter-synca-admin .otter-synca-help-step ol,
+.otter-synca-admin .otter-synca-help-step ul {
+    padding-left: 20px;
+    margin: 16px 0 0;
+}
+
+.otter-synca-admin .otter-synca-help-step li {
+    margin-bottom: 8px;
+    line-height: 1.45;
 }
 
 .otter-synca-admin .otter-synca-faq {
     display: grid;
-    gap: 20px;
+    gap: 10px;
 }
 
 .otter-synca-admin .otter-synca-faq-item {
+    overflow: hidden;
     background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid var(--otter-border);
+    border-radius: 9px;
 }
 
-.otter-synca-admin .otter-synca-faq-item h3 {
-    margin-top: 0;
-    color: #2271b1;
+.otter-synca-admin .otter-synca-faq-item summary {
+    position: relative;
+    padding: 17px 50px 17px 18px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    list-style: none;
 }
 
-/* Buy Me a Coffee Page - Prefixado com .otter-synca-admin */
-.otter-synca-admin .otter-synca-coffee-content {
-    max-width: 800px;
-    margin: 20px 0;
+.otter-synca-admin .otter-synca-faq-item summary::-webkit-details-marker {
+    display: none;
 }
 
-.otter-synca-admin .otter-synca-coffee-header {
-    text-align: center;
-    margin-bottom: 40px;
+.otter-synca-admin .otter-synca-faq-item summary::after {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    color: var(--otter-primary);
+    content: "+";
+    font-size: 22px;
+    font-weight: 400;
+    transform: translateY(-50%);
 }
 
-.otter-synca-admin .otter-synca-coffee-message {
-    text-align: center;
-    font-style: italic;
-    color: #666;
+.otter-synca-admin .otter-synca-faq-item[open] summary::after {
+    content: "−";
+}
+
+.otter-synca-admin .otter-synca-faq-item[open] summary {
+    color: var(--otter-primary);
+    background: #f6faff;
+}
+
+.otter-synca-admin .otter-synca-faq-item p {
+    padding: 0 18px 18px;
+    margin: 0;
+    color: var(--otter-text-light);
+    line-height: 1.55;
+}
+
+.otter-synca-admin .otter-synca-help-support {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 26px 28px;
+    background: #fff;
+    border: 1px solid var(--otter-border);
+    border-left: 4px solid var(--otter-primary);
+    border-radius: 10px;
+    box-shadow: var(--otter-shadow);
+}
+
+.otter-synca-admin .otter-synca-help-support > .dashicons {
+    width: 36px;
+    height: 36px;
+    color: var(--otter-primary);
+    font-size: 36px;
+}
+
+.otter-synca-admin .otter-synca-help-support h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.otter-synca-admin .otter-synca-help-support p {
+    margin: 0;
+    color: var(--otter-text-light);
+}
+
+.otter-synca-admin .otter-synca-help-support .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: 0 18px;
+}
+
+@media screen and (max-width: 960px) {
+    .otter-synca-admin .otter-synca-help-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .otter-synca-admin .otter-synca-help-hero {
+        padding: 28px 24px;
+    }
+
+    .otter-synca-admin .otter-synca-help-hero > .dashicons {
+        display: none;
+    }
+
+    .otter-synca-admin .otter-synca-help-section {
+        padding: 22px 18px;
+    }
+
+    .otter-synca-admin .otter-synca-help-support {
+        grid-template-columns: auto 1fr;
+    }
+
+    .otter-synca-admin .otter-synca-help-support .button {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
 }
 
 /* Code blocks - Prefixado com .otter-synca-admin */

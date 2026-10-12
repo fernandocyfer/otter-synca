@@ -65,9 +65,19 @@ class Otter_Synca {
     private function load_dependencies() {
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-otter-synca-loader.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-otter-synca-i18n.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-otter-synca-deployer.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-otter-synca-webhook.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-otter-synca-admin.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-otter-synca-public.php';
+
+        add_filter(
+            'option_otter_synca_github_token',
+            array('Otter_Synca_Deployer', 'decrypt_secret')
+        );
+        add_filter(
+            'option_otter_synca_webhook_secret',
+            array('Otter_Synca_Deployer', 'decrypt_secret')
+        );
 
         $this->loader = new Otter_Synca_Loader();
     }
@@ -100,7 +110,7 @@ class Otter_Synca {
         $this->loader->add_action('admin_init', $plugin_admin, 'register_settings');
         
         // Initialize webhook handler only if auto-deploy is enabled
-        if (get_option('otter_synca_auto_deploy', false)) {
+        if (class_exists('Otter_Synca_Pro')) {
             new Otter_Synca_Webhook();
             // Add query vars for webhook
             $this->loader->add_filter('query_vars', $this, 'add_webhook_query_vars');
@@ -181,16 +191,13 @@ class Otter_Synca {
      * Handle auto-deploy setting changes
      *
      * @since     1.0.0
-     * @param     string    $option    The option name
-     * @param     mixed     $old_value The old option value
-     * @param     mixed     $value     The new option value
+     * @param     mixed     $old_value The old option value.
+     * @param     mixed     $value     The new option value.
+     * @param     string    $option    The option name.
      */
-    public function handle_auto_deploy_setting_change($option, $old_value, $value) {
-        // Flush rewrite rules when auto-deploy setting changes
-        // This ensures the webhook endpoint is properly registered/unregistered
-        flush_rewrite_rules();
-        
-        // Log the change
-        error_log("OtterSynca: Auto-deploy setting changed from " . ($old_value ? 'enabled' : 'disabled') . " to " . ($value ? 'enabled' : 'disabled'));
+    public function handle_auto_deploy_setting_change($old_value, $value, $option) {
+        if ((bool) $old_value !== (bool) $value) {
+            flush_rewrite_rules(false);
+        }
     }
 } 

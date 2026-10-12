@@ -21,6 +21,8 @@ class Otter_Synca_Activator {
         add_option('otter_synca_branch', 'main');
         add_option('otter_synca_deploy_type', 'plugin');
         add_option('otter_synca_target_slug', '');
+        add_option('otter_synca_auto_deploy', 0);
+        add_option('otter_synca_webhook_secret', '');
         add_option('otter_synca_last_deploy', array(
             'status' => '',
             'message' => '',

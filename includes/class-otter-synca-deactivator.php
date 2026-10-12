@@ -15,7 +15,7 @@ class Otter_Synca_Deactivator {
      * @since    1.0.0
      */
     public static function deactivate() {
-        // We don't delete options on deactivation to preserve settings
-        // in case the plugin is reactivated
+        delete_option('otter_synca_deploy_lock');
+        flush_rewrite_rules(false);
     }
 } 

@@ -28,11 +28,11 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
         <a href="?page=otter-synca&tab=settings" class="nav-tab <?php echo $current_tab === 'settings' ? 'nav-tab-active' : ''; ?>">
             <?php esc_html_e('Settings', 'otter-synca'); ?>
         </a>
-        <a href="?page=otter-synca&tab=premium" class="nav-tab <?php echo $current_tab === 'premium' ? 'nav-tab-active' : ''; ?>">
-            <?php esc_html_e('Premium', 'otter-synca'); ?>
-        </a>
         <a href="?page=otter-synca&tab=help" class="nav-tab <?php echo $current_tab === 'help' ? 'nav-tab-active' : ''; ?>">
             <?php esc_html_e('Help', 'otter-synca'); ?>
+        </a>
+        <a href="?page=otter-synca&tab=premium" class="nav-tab <?php echo $current_tab === 'premium' ? 'nav-tab-active' : ''; ?>">
+            <?php esc_html_e('Premium', 'otter-synca'); ?>
         </a>
         <a href="?page=otter-synca&tab=coffee" class="nav-tab <?php echo $current_tab === 'coffee' ? 'nav-tab-active' : ''; ?>">
             <?php esc_html_e('Buy Me a Coffee', 'otter-synca'); ?>
@@ -46,11 +46,11 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
                 case 'settings':
                     include plugin_dir_path(__FILE__) . 'otter-synca-admin-settings.php';
                     break;
-                case 'premium':
-                    include plugin_dir_path(__FILE__) . 'otter-synca-admin-premium.php';
-                    break;
                 case 'help':
                     include plugin_dir_path(__FILE__) . 'otter-synca-admin-help.php';
+                    break;
+                case 'premium':
+                    include plugin_dir_path(__FILE__) . 'otter-synca-admin-premium.php';
                     break;
                 case 'coffee':
                     include plugin_dir_path(__FILE__) . 'otter-synca-admin-coffee.php';
@@ -77,7 +77,7 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
                 <div id="otter-synca-deploy-status"></div>
             </div>
 
-            <div class="otter-synca-card">
+            <div class="otter-synca-card" id="otter-synca-last-deploy">
                 <div class="otter-synca-card-header">
                     <h2 class="otter-synca-card-title"><?php esc_html_e('Last Deploy', 'otter-synca'); ?></h2>
                 </div>
@@ -86,10 +86,10 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
                 if ($last_deploy) {
                     $status_class = $last_deploy['status'] === 'success' ? 'otter-synca-status-success' : 'otter-synca-status-error';
                     ?>
-                    <div class="otter-synca-status <?php echo esc_attr($status_class); ?>">
+                    <div class="otter-synca-status <?php echo esc_attr($status_class); ?>" data-otter-synca-last-status>
                         <?php echo esc_html($last_deploy['status'] === 'success' ? __('Success', 'otter-synca') : __('Error', 'otter-synca')); ?>
                     </div>
-                    <p><?php echo esc_html($last_deploy['message']); ?></p>
+                    <p data-otter-synca-last-message><?php echo esc_html($last_deploy['message']); ?></p>
                     
                     <?php if (isset($last_deploy['commit_sha'])): ?>
                         <p class="description">
@@ -105,7 +105,7 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
                         </p>
                     <?php endif; ?>
                     
-                    <p class="description">
+                    <p class="description" data-otter-synca-last-time>
                         <?php echo esc_html(sprintf(
                             /* translators: %s: date and time */
                             __('At: %s', 'otter-synca'),
@@ -113,7 +113,9 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
                         )); ?>
                     </p>
                 <?php } else { ?>
-                    <p><?php esc_html_e('No deploy has been performed yet.', 'otter-synca'); ?></p>
+                    <div class="otter-synca-status" data-otter-synca-last-status></div>
+                    <p data-otter-synca-last-message><?php esc_html_e('No deploy has been performed yet.', 'otter-synca'); ?></p>
+                    <p class="description" data-otter-synca-last-time></p>
                 <?php } ?>
             </div>
 
@@ -144,10 +146,10 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
                     
                     <button type="button" 
                             class="button button-secondary otter-synca-test-webhook" 
-                            data-nonce="<?php echo wp_create_nonce('otter_synca_nonce'); ?>">
-                        <?php esc_html_e('Test Webhook', 'otter-synca'); ?>
+                            data-nonce="<?php echo esc_attr(wp_create_nonce('otter_synca_nonce')); ?>">
+                        <?php esc_html_e('Validate Webhook', 'otter-synca'); ?>
                     </button>
-                    <span class="otter-synca-test-result" style="display: none; margin-left: 10px;"></span>
+                    <span class="otter-synca-test-result"></span>
                 </div>
                 <?php else: ?>
                 <div class="otter-synca-card otter-synca-pro-feature-locked">
@@ -158,7 +160,7 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
                         </h2>
                     </div>
                     <p><?php esc_html_e('Auto deploy is a premium feature. Activate OtterSynca Pro to use automatic webhooks.', 'otter-synca'); ?></p>
-                    <a href="<?php echo admin_url('admin.php?page=otter-synca&tab=premium'); ?>" class="button button-primary">
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=otter-synca&tab=premium')); ?>" class="button button-primary">
                         <?php esc_html_e('View Pro Features', 'otter-synca'); ?>
                     </a>
                 </div>
