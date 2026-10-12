@@ -101,6 +101,7 @@ The free version includes basic deployment features, while Pro adds automatic de
 * Hardened ZIP extraction, deployment paths, webhook authentication, and concurrent deploy handling
 * Added streamed downloads, atomic target replacement, and server-side settings validation
 * Improved deploy and webhook feedback in the admin interface
+* Added English as the default language and complete Brazilian Portuguese translations
 
 = 1.0.1
 * Internationalization

@@ -83,15 +83,14 @@ class Otter_Synca {
     }
 
     /**
-     * Define the locale for this plugin for internationalization.
-     * WordPress automatically loads translations since version 4.6.
+     * Define the locale for this plugin.
      *
      * @since    1.0.1
      * @access   private
      */
     private function set_locale() {
-        // WordPress automatically loads translations for plugins
-        // No manual action needed since WordPress 4.6
+        $plugin_i18n = new Otter_Synca_i18n();
+        $this->loader->add_action('init', $plugin_i18n, 'load_plugin_textdomain');
     }
 
     /**

@@ -1,692 +1,967 @@
-# Copyright (C) 2024 Fernando Filho
+# Copyright (C) 2026 Cyfer Development
 # This file is distributed under the same license as the OtterSynca plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: OtterSynca 1.0.2\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/otter-synca\n"
-"POT-Creation-Date: 2024-03-19T12:00:00+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-03-19T12:00:00+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/otter-synca-main\n"
+"POT-Creation-Date: 2026-10-12T16:26:23+00:00\n"
+"PO-Revision-Date: 2026-10-12T16:30:00+00:00\n"
 "Last-Translator: Fernando Filho <fernando@ottersynca.com>\n"
 "Language-Team: Português do Brasil <fernando@ottersynca.com>\n"
 "Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: WP-CLI 2.12.0 and GNU gettext\n"
 
-#: admin/class-otter-synca-admin.php:115
+#. Plugin Name of the plugin
+#: otter-synca.php
+msgid "OtterSynca – Git Deployment & Sync Tool"
+msgstr "OtterSynca – Ferramenta de Deploy e Sincronização Git"
+
+#. Plugin URI of the plugin
+#: otter-synca.php
+msgid "https://ottersynca.com"
+msgstr "https://ottersynca.com"
+
+#. Description of the plugin
+#: otter-synca.php
+msgid ""
+"Deploy WordPress plugins and themes directly from GitHub repositories. "
+"Automatize your workflow with automatic deploys, multiple repositories, "
+"backups, and detailed logs. Get <a href=\"https://plugins.cyfer.com.br/"
+"downloads/ottersynca-deploy-para-wordpress/\" target=\"_blank\">OtterSynca "
+"Pro</a> for advanced features."
+msgstr ""
+"Implante plugins e temas do WordPress diretamente de repositórios GitHub. "
+"Automatize seu fluxo de trabalho com deploys automáticos, múltiplos "
+"repositórios, backups e logs detalhados. Adquira o <a href=\"https://"
+"plugins.cyfer.com.br/downloads/ottersynca-deploy-para-wordpress/\" "
+"target=\"_blank\">OtterSynca Pro</a> para ter recursos avançados."
+
+#. Author of the plugin
+#: otter-synca.php
+msgid "Cyfer Development"
+msgstr "Cyfer Development"
+
+#. Author URI of the plugin
+#: otter-synca.php
+msgid "https://cyfer.com.br"
+msgstr "https://cyfer.com.br"
+
+#: admin/class-otter-synca-admin.php:68
+msgid "Deploying..."
+msgstr "Fazendo deploy..."
+
+#: admin/class-otter-synca-admin.php:69
+msgid "Deploy successful!"
+msgstr "Deploy realizado com sucesso!"
+
+#: admin/class-otter-synca-admin.php:70
+msgid "Deploy failed!"
+msgstr "Falha no deploy!"
+
+#: admin/class-otter-synca-admin.php:71
+#: admin/partials/otter-synca-admin-display.php:93
+msgid "Success"
+msgstr "Sucesso"
+
+#: admin/class-otter-synca-admin.php:72
+#: admin/partials/otter-synca-admin-display.php:93
+msgid "Error"
+msgstr "Erro"
+
+#: admin/class-otter-synca-admin.php:73
+msgid "Deployed at:"
+msgstr "Deployado em:"
+
+#: admin/class-otter-synca-admin.php:74
+msgid "Please fill in all required fields."
+msgstr "Por favor, preencha todos os campos obrigatórios."
+
+#: admin/class-otter-synca-admin.php:75
+#: includes/class-otter-synca-deployer.php:199
+msgid "Invalid repository format. Use owner/repository."
+msgstr "Formato de repositório inválido. Use proprietário/repositório."
+
+#: admin/class-otter-synca-admin.php:76
+msgid "Show Token"
+msgstr "Mostrar token"
+
+#: admin/class-otter-synca-admin.php:77
+msgid "Hide Token"
+msgstr "Ocultar token"
+
+#: admin/class-otter-synca-admin.php:78
+msgid "Show Secret"
+msgstr "Mostrar secret"
+
+#: admin/class-otter-synca-admin.php:79
+msgid "Hide Secret"
+msgstr "Ocultar secret"
+
+#: admin/class-otter-synca-admin.php:80
+msgid "Webhook secret generated successfully."
+msgstr "Secret do webhook gerado com sucesso."
+
+#: admin/class-otter-synca-admin.php:81
+msgid "Validating..."
+msgstr "Validando..."
+
+#: admin/class-otter-synca-admin.php:82
+#: admin/partials/otter-synca-admin-display.php:153
+msgid "Validate Webhook"
+msgstr "Validar webhook"
+
+#: admin/class-otter-synca-admin.php:83
+msgid "Could not validate the webhook configuration."
+msgstr "Não foi possível validar a configuração do webhook."
+
+#: admin/class-otter-synca-admin.php:93 admin/class-otter-synca-admin.php:94
 msgid "OtterSynca"
 msgstr "OtterSynca"
 
-#: admin/partials/otter-synca-admin-display.php:29
-msgid "Settings"
-msgstr "Configurações"
+#: admin/class-otter-synca-admin.php:144 admin/class-otter-synca-admin.php:191
+msgid "Security error: invalid nonce."
+msgstr "Erro de segurança: nonce inválido."
+
+#: admin/class-otter-synca-admin.php:148 admin/class-otter-synca-admin.php:195
+msgid "You do not have permission to perform this action."
+msgstr "Você não tem permissão para realizar esta ação."
+
+#: admin/class-otter-synca-admin.php:161
+#: includes/class-otter-synca-webhook.php:153
+msgid "Deploy completed successfully."
+msgstr "Deploy concluído com sucesso."
+
+#: admin/class-otter-synca-admin.php:199
+msgid "OtterSynca Pro must be active to use webhooks."
+msgstr "O OtterSynca Pro deve estar ativo para usar webhooks."
+
+#: admin/class-otter-synca-admin.php:203
+msgid "Enable auto deploy before validating the webhook."
+msgstr "Ative o deploy automático antes de validar o webhook."
+
+#: admin/class-otter-synca-admin.php:208
+msgid "Configure a webhook secret with at least 32 characters."
+msgstr "Configure um secret de webhook com pelo menos 32 caracteres."
+
+#: admin/class-otter-synca-admin.php:219
+msgid "Webhook configuration is valid."
+msgstr "A configuração do webhook é válida."
+
+#: admin/class-otter-synca-admin.php:316
+msgid "Webhook secret must contain between 32 and 255 characters."
+msgstr "O secret do webhook deve conter entre 32 e 255 caracteres."
+
+#: admin/partials/otter-synca-admin-coffee.php:20
+msgid "Support OtterSynca"
+msgstr "Apoie o OtterSynca"
+
+#: admin/partials/otter-synca-admin-coffee.php:21
+#: admin/partials/otter-synca-admin-display.php:41
+msgid "Buy Me a Coffee"
+msgstr "Compre um Café"
+
+#: admin/partials/otter-synca-admin-coffee.php:22
+msgid ""
+"If you like OtterSynca and want to support its development, consider buying "
+"a coffee!"
+msgstr ""
+"Se você gosta do OtterSynca e quer apoiar seu desenvolvimento, considere "
+"comprar um café!"
+
+#: admin/partials/otter-synca-admin-coffee.php:29
+msgid "Choose your support"
+msgstr "Escolha como apoiar"
+
+#: admin/partials/otter-synca-admin-coffee.php:30
+msgid "Every coffee helps"
+msgstr "Cada café faz a diferença"
+
+#: admin/partials/otter-synca-admin-coffee.php:36
+msgid "One Coffee"
+msgstr "Um Café"
+
+#: admin/partials/otter-synca-admin-coffee.php:38
+msgid "A simple coffee to start the day!"
+msgstr "Um café simples para começar o dia!"
+
+#: admin/partials/otter-synca-admin-coffee.php:40
+msgid "Buy a Coffee"
+msgstr "Comprar um Café"
+
+#: admin/partials/otter-synca-admin-coffee.php:49
+msgid "Double Coffee"
+msgstr "Café Duplo"
+
+#: admin/partials/otter-synca-admin-coffee.php:51
+msgid "Two coffees for a productive day!"
+msgstr "Dois cafés para um dia produtivo!"
+
+#: admin/partials/otter-synca-admin-coffee.php:53
+msgid "Buy Double Coffee"
+msgstr "Comprar Café Duplo"
+
+#: admin/partials/otter-synca-admin-coffee.php:59
+msgid "Premium Coffee"
+msgstr "Café Premium"
+
+#: admin/partials/otter-synca-admin-coffee.php:61
+msgid "A special coffee for a special day!"
+msgstr "Um café especial para um dia especial!"
+
+#: admin/partials/otter-synca-admin-coffee.php:63
+msgid "Buy Premium Coffee"
+msgstr "Comprar Café Premium"
+
+#: admin/partials/otter-synca-admin-coffee.php:72
+msgid "Thank you for your support!"
+msgstr "Agradecemos pelo seu apoio!"
+
+#: admin/partials/otter-synca-admin-coffee.php:73
+msgid "Your support is very important to keep OtterSynca development going!"
+msgstr ""
+"Seu apoio é muito importante para manter o desenvolvimento do OtterSynca!"
+
+#: admin/partials/otter-synca-admin-display.php:26
+msgid "Deploys from GitHub to WordPress."
+msgstr "Deploys do GitHub para o WordPress."
+
+#: admin/partials/otter-synca-admin-display.php:27
+msgid "Just like that."
+msgstr "Simples assim."
 
 #: admin/partials/otter-synca-admin-display.php:32
-msgid "Premium"
-msgstr "Premium"
+msgid "Settings"
+msgstr "Configurações"
 
 #: admin/partials/otter-synca-admin-display.php:35
 msgid "Help"
 msgstr "Ajuda"
 
 #: admin/partials/otter-synca-admin-display.php:38
-msgid "Buy Me a Coffee"
-msgstr "Compre um Café"
+msgid "Premium"
+msgstr "Premium"
 
-#: admin/partials/otter-synca-admin-display.php:68
+#: admin/partials/otter-synca-admin-display.php:71
 msgid "Deploy"
 msgstr "Deploy"
 
-#: admin/partials/otter-synca-admin-display.php:71
-msgid "Click the button below to deploy the latest version of the repository."
-msgstr "Clique no botão abaixo para fazer o deploy da última versão do repositório."
-
 #: admin/partials/otter-synca-admin-display.php:74
+msgid "Click the button below to deploy the latest version of the repository."
+msgstr ""
+"Clique no botão abaixo para fazer o deploy da última versão do repositório."
+
+#: admin/partials/otter-synca-admin-display.php:77
 msgid "Deploy Now"
 msgstr "Fazer Deploy Agora"
 
-#: admin/partials/otter-synca-admin-display.php:82
+#: admin/partials/otter-synca-admin-display.php:85
 msgid "Last Deploy"
 msgstr "Último Deploy"
 
-#: admin/partials/otter-synca-admin-display.php:90
-msgid "Success"
-msgstr "Sucesso"
-
-#: admin/partials/otter-synca-admin-display.php:90
-msgid "Error"
-msgstr "Erro"
-
-#: admin/partials/otter-synca-admin-display.php:96
+#: admin/partials/otter-synca-admin-display.php:99
 msgid "Commit:"
 msgstr "Commit:"
 
-#: admin/partials/otter-synca-admin-display.php:103
+#: admin/partials/otter-synca-admin-display.php:106
 msgid "Branch:"
 msgstr "Branch:"
 
-#: admin/partials/otter-synca-admin-display.php:111
+#. translators: %s: date and time
+#: admin/partials/otter-synca-admin-display.php:114
+#, php-format
 msgid "At: %s"
 msgstr "Em: %s"
 
-#: admin/partials/otter-synca-admin-display.php:116
+#: admin/partials/otter-synca-admin-display.php:120
 msgid "No deploy has been performed yet."
 msgstr "Nenhum deploy realizado ainda."
 
-#: admin/partials/otter-synca-admin-display.php:124
+#: admin/partials/otter-synca-admin-display.php:129
+#: admin/partials/otter-synca-admin-display.php:161
+#: admin/partials/otter-synca-admin-premium.php:52
+#: admin/partials/otter-synca-admin-settings.php:126
 msgid "Auto Deploy"
 msgstr "Deploy Automático"
 
-#: admin/partials/otter-synca-admin-display.php:127
+#: admin/partials/otter-synca-admin-display.php:132
 msgid "Enabled"
 msgstr "Ativado"
 
-#: admin/partials/otter-synca-admin-display.php:129
-msgid "Auto deploy is active. Commits to the configured branch will trigger automatic deployment."
-msgstr "O deploy automático está ativo. Commits na branch configurada irão disparar deploy automaticamente."
+#: admin/partials/otter-synca-admin-display.php:134
+msgid ""
+"Auto deploy is active. Commits to the configured branch will trigger "
+"automatic deployment."
+msgstr ""
+"O deploy automático está ativo. Commits na branch configurada irão disparar "
+"deploy automaticamente."
 
-#: admin/partials/otter-synca-admin-display.php:135
+#: admin/partials/otter-synca-admin-display.php:140
 msgid "Last deployed commit:"
 msgstr "Último commit deployado:"
 
-#: admin/partials/otter-synca-admin-display.php:141
+#: admin/partials/otter-synca-admin-display.php:146
 msgid "Webhook URL:"
 msgstr "Webhook URL:"
 
-#: admin/partials/otter-synca-admin-display.php:148
-msgid "Test Webhook"
-msgstr "Testar Webhook"
-
-#: admin/partials/otter-synca-admin-display.php:156
+#: admin/partials/otter-synca-admin-display.php:162
 msgid "Pro"
 msgstr "Pro"
 
-#: admin/partials/otter-synca-admin-display.php:160
-msgid "Auto deploy is a premium feature. Activate OtterSynca Pro to use automatic webhooks."
-msgstr "O deploy automático é um recurso premium. Ative o OtterSynca Pro para usar webhooks automáticos."
+#: admin/partials/otter-synca-admin-display.php:165
+msgid ""
+"Auto deploy is a premium feature. Activate OtterSynca Pro to use automatic "
+"webhooks."
+msgstr ""
+"O deploy automático é um recurso premium. Ative o OtterSynca Pro para usar "
+"webhooks automáticos."
 
-#: admin/partials/otter-synca-admin-display.php:162
+#: admin/partials/otter-synca-admin-display.php:167
 msgid "View Pro Features"
 msgstr "Ver Recursos Pro"
+
+#: admin/partials/otter-synca-admin-help.php:21
+msgid "Help Center"
+msgstr "Central de Ajuda"
+
+#: admin/partials/otter-synca-admin-help.php:22
+msgid "Getting Started"
+msgstr "Primeiros Passos"
+
+#: admin/partials/otter-synca-admin-help.php:23
+msgid ""
+"Configure your repository and complete your first deployment in three steps."
+msgstr ""
+"Configure seu repositório e conclua seu primeiro deploy em três etapas."
+
+#: admin/partials/otter-synca-admin-help.php:31
+msgid "Quick setup"
+msgstr "Configuração rápida"
+
+#: admin/partials/otter-synca-admin-help.php:32
+msgid "Three steps to deploy"
+msgstr "Três etapas para fazer deploy"
+
+#: admin/partials/otter-synca-admin-help.php:39
+msgid "1. Create a GitHub Token"
+msgstr "1. Crie um Token do GitHub"
+
+#: admin/partials/otter-synca-admin-help.php:40
+msgid "To get started, you need to create a personal access token on GitHub:"
+msgstr "Para começar, você precisa criar um token de acesso pessoal no GitHub:"
+
+#: admin/partials/otter-synca-admin-help.php:42
+msgid "Go to GitHub settings"
+msgstr "Acesse as configurações do GitHub"
+
+#: admin/partials/otter-synca-admin-help.php:43
+msgid ""
+"Navigate to \"Developer settings\" > \"Personal access tokens\" > \"Tokens "
+"(classic)\""
+msgstr ""
+"Acesse \"Developer settings\" > \"Personal access tokens\" > \"Tokens "
+"(classic)\""
+
+#: admin/partials/otter-synca-admin-help.php:44
+msgid "Click \"Generate new token\""
+msgstr "Clique em \"Generate new token\""
+
+#: admin/partials/otter-synca-admin-help.php:45
+msgid "Give the token a name and select \"repo\" permissions"
+msgstr "Dê um nome ao token e selecione as permissões \"repo\""
+
+#: admin/partials/otter-synca-admin-help.php:46
+msgid ""
+"Copy the generated token and paste it in the \"GitHub Token\" field in the "
+"plugin settings"
+msgstr ""
+"Copie o token gerado e cole no campo \"GitHub Token\" nas configurações do "
+"plugin"
+
+#: admin/partials/otter-synca-admin-help.php:52
+msgid "2. Configure the Plugin"
+msgstr "2. Configure o Plugin"
+
+#: admin/partials/otter-synca-admin-help.php:53
+msgid ""
+"After creating the token, configure the plugin with the following "
+"information:"
+msgstr "Após criar o token, configure o plugin com as seguintes informações:"
+
+#: admin/partials/otter-synca-admin-help.php:55
+msgid "Repository: Repository name in the format username/repository"
+msgstr "Repositório: Nome do repositório no formato username/repository"
+
+#: admin/partials/otter-synca-admin-help.php:56
+msgid "Branch: Branch you want to deploy (default: main)"
+msgstr "Branch: Branch que você deseja fazer deploy (padrão: main)"
+
+#: admin/partials/otter-synca-admin-help.php:57
+msgid "Deploy Type: Select whether it is a plugin or theme"
+msgstr "Tipo de Deploy: Selecione se é um plugin ou tema"
+
+#: admin/partials/otter-synca-admin-help.php:58
+msgid "Target Slug: Name of the plugin or theme that will be updated"
+msgstr "Slug do Alvo: Nome do plugin ou tema que será atualizado"
+
+#: admin/partials/otter-synca-admin-help.php:64
+msgid "3. Deploy"
+msgstr "3. Faça o Deploy"
+
+#: admin/partials/otter-synca-admin-help.php:65
+msgid "With everything configured, you can deploy:"
+msgstr "Com tudo configurado, você pode fazer o deploy:"
+
+#: admin/partials/otter-synca-admin-help.php:67
+msgid "Verify that all settings are correct"
+msgstr "Verifique se todas as configurações estão corretas"
+
+#: admin/partials/otter-synca-admin-help.php:68
+msgid "Click the \"Deploy Now\" button"
+msgstr "Clique no botão \"Fazer Deploy Agora\""
+
+#: admin/partials/otter-synca-admin-help.php:69
+msgid "Wait for the process to complete"
+msgstr "Aguarde o processo ser concluído"
+
+#: admin/partials/otter-synca-admin-help.php:70
+msgid "Check the deploy status in the sidebar"
+msgstr "Verifique o status do deploy na barra lateral"
+
+#: admin/partials/otter-synca-admin-help.php:79
+msgid "Common questions"
+msgstr "Dúvidas comuns"
+
+#: admin/partials/otter-synca-admin-help.php:80
+msgid "Frequently Asked Questions"
+msgstr "Perguntas Frequentes"
+
+#: admin/partials/otter-synca-admin-help.php:86
+msgid "What permissions does the GitHub token need?"
+msgstr "Quais permissões o token do GitHub precisa ter?"
+
+#: admin/partials/otter-synca-admin-help.php:87
+msgid ""
+"The token needs repository access permission (repo). This allows the plugin "
+"to download code from the repository."
+msgstr ""
+"O token precisa ter permissão de acesso ao repositório (repo). Isso permite "
+"que o plugin baixe o código do repositório."
+
+#: admin/partials/otter-synca-admin-help.php:91
+msgid "Can I deploy multiple repositories?"
+msgstr "Posso fazer deploy de múltiplos repositórios?"
+
+#: admin/partials/otter-synca-admin-help.php:92
+msgid ""
+"Yes! In the premium version of the plugin you can configure multiple "
+"repositories and manage them centrally."
+msgstr ""
+"Sim! Na versão premium do plugin você pode configurar múltiplos repositórios "
+"e gerenciá-los de forma centralizada."
+
+#: admin/partials/otter-synca-admin-help.php:96
+msgid "Does the plugin backup before deploying?"
+msgstr "O plugin faz backup antes do deploy?"
+
+#: admin/partials/otter-synca-admin-help.php:97
+msgid ""
+"In the premium version, the plugin automatically backs up before each "
+"deployment, allowing you to revert to the previous version if necessary."
+msgstr ""
+"Na versão premium, o plugin faz backup automático antes de cada deploy, "
+"permitindo reverter para a versão anterior se necessário."
+
+#: admin/partials/otter-synca-admin-help.php:105
+msgid "Need more help?"
+msgstr "Precisa de mais ajuda?"
+
+#: admin/partials/otter-synca-admin-help.php:106
+msgid "If you didn't find the answer you were looking for, contact us:"
+msgstr ""
+"Se você não encontrou a resposta que procurava, entre em contato conosco:"
+
+#: admin/partials/otter-synca-admin-help.php:109
+msgid "Open an Issue on GitHub"
+msgstr "Abrir um Issue no GitHub"
+
+#: admin/partials/otter-synca-admin-premium.php:22
+msgid "OtterSynca Pro"
+msgstr "OtterSynca Pro"
+
+#: admin/partials/otter-synca-admin-premium.php:23
+msgid "Take your WordPress workflow to the next level"
+msgstr "Leve seu fluxo de trabalho WordPress para o próximo nível"
+
+#: admin/partials/otter-synca-admin-premium.php:24
+msgid ""
+"Automate the deployment of your plugins and themes directly from your GitHub "
+"repositories — no manual uploads and with full control over your release "
+"cycle."
+msgstr ""
+"Automatize a implantação de seus plugins e temas diretamente dos seus "
+"repositórios do GitHub — sem uploads manuais e com controle total sobre seu "
+"ciclo de lançamento."
+
+#: admin/partials/otter-synca-admin-premium.php:29
+msgid "Pro active"
+msgstr "Pro ativo"
+
+#: admin/partials/otter-synca-admin-premium.php:33
+#: admin/partials/otter-synca-admin-premium.php:121
+msgid "Get OtterSynca Pro"
+msgstr "Adquirir o OtterSynca Pro"
+
+#: admin/partials/otter-synca-admin-premium.php:44
+msgid "Everything you need"
+msgstr "Tudo o que você precisa"
+
+#: admin/partials/otter-synca-admin-premium.php:45
+msgid "Features included in Pro"
+msgstr "Recursos incluídos no Pro"
+
+#: admin/partials/otter-synca-admin-premium.php:53
+msgid ""
+"Configure automatic deployments when there are new commits in the repository."
+msgstr ""
+"Configure deploys automáticos quando houver novos commits no repositório."
+
+#: admin/partials/otter-synca-admin-premium.php:55
+msgid "Automatic deployment via webhook"
+msgstr "Deploy automático por webhook"
+
+#: admin/partials/otter-synca-admin-premium.php:56
+msgid "Scheduled deployments"
+msgstr "Agendamento de deploys"
+
+#: admin/partials/otter-synca-admin-premium.php:57
+msgid "Email notifications"
+msgstr "Notificações por email"
+
+#: admin/partials/otter-synca-admin-premium.php:63
+msgid "Multiple Repositories"
+msgstr "Múltiplos Repositórios"
+
+#: admin/partials/otter-synca-admin-premium.php:64
+msgid "Manage multiple repositories at once."
+msgstr "Gerencie vários repositórios de uma vez."
+
+#: admin/partials/otter-synca-admin-premium.php:66
+msgid "Centralized interface"
+msgstr "Interface centralizada"
+
+#: admin/partials/otter-synca-admin-premium.php:67
+msgid "Bulk deployment"
+msgstr "Deploy em massa"
+
+#: admin/partials/otter-synca-admin-premium.php:68
+msgid "Repository groups"
+msgstr "Grupos de repositórios"
+
+#: admin/partials/otter-synca-admin-premium.php:74
+msgid "Automatic Backup"
+msgstr "Backup Automático"
+
+#: admin/partials/otter-synca-admin-premium.php:75
+msgid "Keep your files safe with automatic backups."
+msgstr "Mantenha seus arquivos seguros com backups automáticos."
+
+#: admin/partials/otter-synca-admin-premium.php:77
+msgid "Backup before deployment"
+msgstr "Backup antes do deploy"
+
+#: admin/partials/otter-synca-admin-premium.php:78
+msgid "Easy restoration"
+msgstr "Restauração fácil"
+
+#: admin/partials/otter-synca-admin-premium.php:79
+msgid "Version history"
+msgstr "Histórico de versões"
+
+#: admin/partials/otter-synca-admin-premium.php:85
+msgid "Detailed Logs"
+msgstr "Logs Detalhados"
+
+#: admin/partials/otter-synca-admin-premium.php:86
+msgid "Track all actions with detailed logs."
+msgstr "Acompanhe todas as ações com logs detalhados."
+
+#: admin/partials/otter-synca-admin-premium.php:88
+msgid "Complete history"
+msgstr "Histórico completo"
+
+#: admin/partials/otter-synca-admin-premium.php:89
+msgid "Log export"
+msgstr "Exportação de logs"
+
+#: admin/partials/otter-synca-admin-premium.php:90
+msgid "Advanced filters"
+msgstr "Filtros avançados"
+
+#: admin/partials/otter-synca-admin-premium.php:100
+msgid "OtterSynca Pro is active"
+msgstr "O OtterSynca Pro está ativo"
+
+#: admin/partials/otter-synca-admin-premium.php:101
+msgid "You have access to all premium features."
+msgstr "Você tem acesso a todos os recursos premium."
+
+#: admin/partials/otter-synca-admin-premium.php:105
+msgid "Manage Pro"
+msgstr "Gerenciar Pro"
+
+#: admin/partials/otter-synca-admin-premium.php:108
+msgid "View Logs"
+msgstr "Ver Logs"
+
+#: admin/partials/otter-synca-admin-premium.php:116
+msgid "Upgrade your workflow"
+msgstr "Evolua seu fluxo de trabalho"
+
+#: admin/partials/otter-synca-admin-premium.php:117
+msgid "Unlock OtterSynca Pro"
+msgstr "Desbloqueie o OtterSynca Pro"
+
+#: admin/partials/otter-synca-admin-premium.php:118
+msgid "Unlock every Pro feature and automate your deployment workflow."
+msgstr "Desbloqueie todos os recursos Pro e automatize seu fluxo de deploy."
 
 #: admin/partials/otter-synca-admin-settings.php:22
 msgid "Plugin Settings"
 msgstr "Configurações do Plugin"
 
-#: admin/partials/otter-synca-admin-settings.php:34
+#: admin/partials/otter-synca-admin-settings.php:36
 msgid "GitHub Token"
 msgstr "Token do GitHub"
 
-#: admin/partials/otter-synca-admin-settings.php:43
+#: admin/partials/otter-synca-admin-settings.php:47
 msgid "GitHub personal access token with repository permissions."
 msgstr "Token de acesso pessoal do GitHub com permissões de repositório."
 
-#: admin/partials/otter-synca-admin-settings.php:50
+#: admin/partials/otter-synca-admin-settings.php:54
 msgid "Repository"
 msgstr "Repositório"
 
-#: admin/partials/otter-synca-admin-settings.php:60
+#: admin/partials/otter-synca-admin-settings.php:65
 msgid "Repository name in the format username/repository."
 msgstr "Nome do repositório no formato username/repository."
 
-#: admin/partials/otter-synca-admin-settings.php:67
+#: admin/partials/otter-synca-admin-settings.php:72
 msgid "Branch"
 msgstr "Branch"
 
-#: admin/partials/otter-synca-admin-settings.php:76
+#: admin/partials/otter-synca-admin-settings.php:82
 msgid "Repository branch to deploy."
 msgstr "Branch do repositório para fazer deploy."
 
-#: admin/partials/otter-synca-admin-settings.php:83
+#: admin/partials/otter-synca-admin-settings.php:89
 msgid "Deploy Type"
 msgstr "Tipo de Deploy"
 
-#: admin/partials/otter-synca-admin-settings.php:88
+#: admin/partials/otter-synca-admin-settings.php:94
 msgid "Plugin"
 msgstr "Plugin"
 
-#: admin/partials/otter-synca-admin-settings.php:91
+#: admin/partials/otter-synca-admin-settings.php:97
 msgid "Theme"
 msgstr "Tema"
 
-#: admin/partials/otter-synca-admin-settings.php:95
+#: admin/partials/otter-synca-admin-settings.php:101
 msgid "Type of deployment to perform."
 msgstr "Tipo de deploy a ser realizado."
 
-#: admin/partials/otter-synca-admin-settings.php:102
+#: admin/partials/otter-synca-admin-settings.php:108
 msgid "Target Slug"
 msgstr "Slug do Alvo"
 
-#: admin/partials/otter-synca-admin-settings.php:111
+#: admin/partials/otter-synca-admin-settings.php:119
 msgid "Target plugin or theme slug."
 msgstr "Slug do plugin ou tema de destino."
 
-
-#: admin/partials/otter-synca-admin-settings.php:127
+#: admin/partials/otter-synca-admin-settings.php:136
 msgid "Enable automatic deployment via webhook"
 msgstr "Ativar deploy automático via webhook"
 
-#: admin/partials/otter-synca-admin-settings.php:133
+#: admin/partials/otter-synca-admin-settings.php:142
 msgid "Exclusive Pro feature!"
 msgstr "Recurso exclusivo da versão Pro!"
 
-#: admin/partials/otter-synca-admin-settings.php:134
+#: admin/partials/otter-synca-admin-settings.php:143
 msgid "Auto deploy is available only in OtterSynca Pro."
 msgstr "O deploy automático está disponível apenas no OtterSynca Pro."
 
-#: admin/partials/otter-synca-admin-settings.php:136
+#: admin/partials/otter-synca-admin-settings.php:145
 msgid "Learn about OtterSynca Pro"
 msgstr "Conheça o OtterSynca Pro"
 
-#: admin/partials/otter-synca-admin-settings.php:142
+#: admin/partials/otter-synca-admin-settings.php:151
 msgid "OtterSynca Pro active!"
 msgstr "OtterSynca Pro ativo!"
 
-#: admin/partials/otter-synca-admin-settings.php:143
+#: admin/partials/otter-synca-admin-settings.php:152
 msgid "Configure auto deploy on the OtterSynca Pro page."
 msgstr "Configure o deploy automático na página do OtterSynca Pro."
 
-#: admin/partials/otter-synca-admin-settings.php:145
+#: admin/partials/otter-synca-admin-settings.php:154
 msgid "Configure in Pro"
 msgstr "Configurar no Pro"
 
-#: admin/partials/otter-synca-admin-settings.php:151
-msgid "When enabled, the plugin will automatically deploy when there are commits to the configured branch."
-msgstr "Quando ativado, o plugin fará deploy automaticamente quando houver commits na branch configurada."
+#: admin/partials/otter-synca-admin-settings.php:160
+msgid ""
+"When enabled, the plugin will automatically deploy when there are commits to "
+"the configured branch."
+msgstr ""
+"Quando ativado, o plugin fará deploy automaticamente quando houver commits "
+"na branch configurada."
 
-#: admin/partials/otter-synca-admin-settings.php:159
+#: admin/partials/otter-synca-admin-settings.php:168
 msgid "Webhook Secret"
 msgstr "Webhook Secret"
 
-#: admin/partials/otter-synca-admin-settings.php:168
+#: admin/partials/otter-synca-admin-settings.php:179
 msgid "Click \"Generate Secret\" or type manually"
 msgstr "Clique em 'Gerar Secret' ou digite manualmente"
 
-#: admin/partials/otter-synca-admin-settings.php:170
+#: admin/partials/otter-synca-admin-settings.php:182
 msgid "Generate Secret"
 msgstr "Gerar Secret"
 
-#: admin/partials/otter-synca-admin-settings.php:174
-msgid "GitHub webhook secret. Use the \"Generate Secret\" button to create a secure key automatically."
-msgstr "Secret do webhook do GitHub. Use o botão \"Gerar Secret\" para criar uma chave segura automaticamente."
+#: admin/partials/otter-synca-admin-settings.php:186
+msgid ""
+"GitHub webhook secret. Use the \"Generate Secret\" button to create a secure "
+"key automatically."
+msgstr ""
+"Secret do webhook do GitHub. Use o botão \"Gerar Secret\" para criar uma "
+"chave segura automaticamente."
 
-#: admin/partials/otter-synca-admin-settings.php:181
+#: admin/partials/otter-synca-admin-settings.php:193
 msgid "Webhook URL"
 msgstr "URL do Webhook"
 
-#: admin/partials/otter-synca-admin-settings.php:190
-msgid "Configure this URL in your GitHub repository as a webhook to enable automatic deployment."
-msgstr "Configure esta URL no seu repositório GitHub como webhook para ativar o deploy automático."
+#: admin/partials/otter-synca-admin-settings.php:202
+msgid ""
+"Configure this URL in your GitHub repository as a webhook to enable "
+"automatic deployment."
+msgstr ""
+"Configure esta URL no seu repositório GitHub como webhook para ativar o "
+"deploy automático."
 
-#: admin/partials/otter-synca-admin-settings.php:193
+#: admin/partials/otter-synca-admin-settings.php:205
 msgid "How to configure:"
 msgstr "Como configurar:"
 
-#: admin/partials/otter-synca-admin-settings.php:194
+#: admin/partials/otter-synca-admin-settings.php:206
 msgid "Go to Settings > Webhooks in your GitHub repository"
 msgstr "Vá para Settings > Webhooks no seu repositório GitHub"
 
-#: admin/partials/otter-synca-admin-settings.php:195
+#: admin/partials/otter-synca-admin-settings.php:207
+#: admin/partials/otter-synca-admin-settings.php:211
 msgid "Click \"Add webhook\""
 msgstr "Clique em \"Add webhook\""
 
-#: admin/partials/otter-synca-admin-settings.php:196
+#: admin/partials/otter-synca-admin-settings.php:208
 msgid "Paste the URL above in the \"Payload URL\" field"
 msgstr "Cole a URL acima no campo \"Payload URL\""
 
-#: admin/partials/otter-synca-admin-settings.php:197
+#: admin/partials/otter-synca-admin-settings.php:209
 msgid "Select \"Just the push event\""
 msgstr "Selecione \"Just the push event\""
 
-#: admin/partials/otter-synca-admin-settings.php:198
-msgid "Add the secret above (optional)"
-msgstr "Adicione o secret acima (opcional)"
+#: admin/partials/otter-synca-admin-settings.php:210
+msgid "Add the required secret shown above"
+msgstr "Adicione o secret obrigatório exibido acima"
 
-
-#: admin/partials/otter-synca-admin-settings.php:205
+#: admin/partials/otter-synca-admin-settings.php:218
 msgid "Save Settings"
 msgstr "Salvar Configurações"
 
-#: admin/class-otter-synca-admin.php:94
-msgid "Deploying..."
-msgstr "Fazendo deploy..."
-
-#: admin/class-otter-synca-admin.php:95
-msgid "Deploy successful!"
-msgstr "Deploy realizado com sucesso!"
-
-#: admin/class-otter-synca-admin.php:96
-msgid "Deploy failed!"
-msgstr "Falha no deploy!"
-
-
-#: admin/class-otter-synca-admin.php:99
-msgid "Deployed at:"
-msgstr "Deployado em:"
-
-#: admin/class-otter-synca-admin.php:100
-msgid "Please fill in all required fields."
-msgstr "Por favor, preencha todos os campos obrigatórios."
-
-#: admin/class-otter-synca-admin.php:101
-msgid "Invalid repository format. Use format: owner/repository"
-msgstr "Formato de repositório inválido. Use o formato: owner/repository"
-
-#: admin/class-otter-synca-admin.php:102
-msgid "Deploy can only be started manually."
-msgstr "O deploy só pode ser iniciado manualmente."
-
-#: admin/class-otter-synca-admin.php:159
-msgid "Security error: invalid nonce."
-msgstr "Erro de segurança: nonce inválido."
-
-#: admin/class-otter-synca-admin.php:164
-msgid "You do not have sufficient permissions to access this page."
-msgstr "Você não tem permissões suficientes para acessar esta página."
-
-#: admin/class-otter-synca-admin.php:170
-msgid "Invalid request."
-msgstr "Requisição inválida."
-
-#: admin/class-otter-synca-admin.php:176
-msgid "Deploy can only be started manually through the button."
-msgstr "O deploy só pode ser iniciado manualmente através do botão."
-
-#: admin/class-otter-synca-admin.php:182
-msgid "Deploy can only be started through a manual click."
-msgstr "O deploy só pode ser iniciado através de um clique manual."
-
-#: admin/class-otter-synca-admin.php:194
-msgid "Invalid request. Deploy can only be started from the plugin page."
-msgstr "Requisição inválida. O deploy só pode ser iniciado a partir da página do plugin."
-
-#: admin/class-otter-synca-admin.php:200
-msgid "You do not have permission to perform this action."
-msgstr "Você não tem permissão para realizar esta ação."
-
-#: admin/class-otter-synca-admin.php:210
-msgid "Wait 30 seconds before starting a new deploy."
-msgstr "Aguarde 30 segundos antes de iniciar um novo deploy."
-
-#: admin/class-otter-synca-admin.php:243
-msgid "Branch \"%s\" not found in repository. Verify that the branch is correct and you have permission to access it."
-msgstr "Branch \"%s\" não encontrada no repositório. Verifique se a branch está correta e se você tem permissão para acessá-la."
-
-#: admin/class-otter-synca-admin.php:248
-msgid "Could not get branch information."
-msgstr "Não foi possível obter informações da branch."
-
-#: admin/class-otter-synca-admin.php:268
-msgid "Failed to download repository."
-msgstr "Falha ao baixar o repositório."
-
-#: admin/class-otter-synca-admin.php:286
-msgid "Failed to extract repository."
-msgstr "Falha ao extrair o repositório."
-
-#: admin/class-otter-synca-admin.php:296
-msgid "Downloaded content does not match the commit from branch \"%s\"."
-msgstr "O conteúdo baixado não corresponde ao commit da branch \"%s\"."
-
-#: admin/class-otter-synca-admin.php:315
-msgid "Deploy completed successfully."
-msgstr "Deploy concluído com sucesso."
-
-#: admin/class-otter-synca-admin.php:388
-msgid "Wait 30 seconds before starting a new webhook test."
-msgstr "Aguarde 30 segundos antes de iniciar um novo teste de webhook."
-
-#: admin/class-otter-synca-admin.php:423
-msgid "Please fill in the webhook secret."
-msgstr "Por favor, preencha o secret do webhook."
-
-#: admin/class-otter-synca-admin.php:457
-msgid "Webhook test failed. Please check your webhook configuration."
-msgstr "Teste de webhook falhou. Por favor, verifique sua configuração de webhook."
-
-#: admin/class-otter-synca-admin.php:463
-msgid "Webhook test successful."
-msgstr "Teste de webhook bem-sucedido."
-
-#: admin/partials/otter-synca-admin-premium.php:26
-msgid "Active"
-msgstr "Ativo"
-
-#: admin/partials/otter-synca-admin-premium.php:28
-msgid "Inactive"
-msgstr "Inativo"
-
-#: admin/partials/otter-synca-admin-premium.php:36
-msgid "OtterSynca Pro is active! You have access to all premium features."
-msgstr "OtterSynca Pro está ativo! Você tem acesso a todos os recursos premium."
-
-#: admin/partials/otter-synca-admin-premium.php:42
-msgid "Automatic deployment via GitHub webhook"
-msgstr "Deploy automático via webhook do GitHub"
-
-#: admin/partials/otter-synca-admin-premium.php:47
-msgid "Manage multiple repositories simultaneously"
-msgstr "Gerencie vários repositórios simultaneamente"
-
-#: admin/partials/otter-synca-admin-premium.php:52
-msgid "Automatic backup before each deployment"
-msgstr "Backup automático antes de cada deploy"
-
-#: admin/partials/otter-synca-admin-premium.php:57
-msgid "Receive deployment and backup notifications"
-msgstr "Receba notificações de deploy e backup"
-
-#: admin/partials/otter-synca-admin-premium.php:62
-msgid "Complete history of all actions"
-msgstr "Histórico completo de todas as ações"
-
-#: admin/partials/otter-synca-admin-premium.php:67
-msgid "Deploy multiple repositories at once"
-msgstr "Deploy de múltiplos repositórios de uma vez"
-
-#: admin/partials/otter-synca-admin-premium.php:73
-msgid "Manage Pro"
-msgstr "Gerenciar Pro"
-
-#: admin/partials/otter-synca-admin-premium.php:76
-msgid "View Logs"
-msgstr "Ver Logs"
-
-#: admin/partials/otter-synca-admin-premium.php:83
-msgid "Take your WordPress workflow to the next level"
-msgstr "Leve seu fluxo de trabalho WordPress para o próximo nível"
-
-#: admin/partials/otter-synca-admin-premium.php:85
-msgid "Automate the deployment of your plugins and themes directly from your GitHub repositories — no manual uploads and with full control over your release cycle."
-msgstr "Automatize a implantação de seus plugins e temas diretamente dos seus repositórios do GitHub — sem uploads manuais e com controle total sobre seu ciclo de lançamento."
-
-#: admin/partials/otter-synca-admin-premium.php:92
-msgid "Configure automatic deployments when there are new commits in the repository."
-msgstr "Configure deploys automáticos quando houver novos commits no repositório."
-
-#: admin/partials/otter-synca-admin-premium.php:94
-msgid "Automatic deployment via webhook"
-msgstr "Deploy automático por webhook"
-
-#: admin/partials/otter-synca-admin-premium.php:95
-msgid "Scheduled deployments"
-msgstr "Agendamento de deploys"
-
-#: admin/partials/otter-synca-admin-premium.php:96
-msgid "Email notifications"
-msgstr "Notificações por email"
-
-#: admin/partials/otter-synca-admin-premium.php:102
-msgid "Manage multiple repositories at once."
-msgstr "Gerencie vários repositórios de uma vez."
-
-#: admin/partials/otter-synca-admin-premium.php:104
-msgid "Centralized interface"
-msgstr "Interface centralizada"
-
-#: admin/partials/otter-synca-admin-premium.php:105
-msgid "Bulk deployment"
-msgstr "Deploy em massa"
-
-#: admin/partials/otter-synca-admin-premium.php:106
-msgid "Repository groups"
-msgstr "Grupos de repositórios"
-
-#: admin/partials/otter-synca-admin-premium.php:112
-msgid "Keep your files safe with automatic backups."
-msgstr "Mantenha seus arquivos seguros com backups automáticos."
-
-#: admin/partials/otter-synca-admin-premium.php:114
-msgid "Backup before deployment"
-msgstr "Backup antes do deploy"
-
-#: admin/partials/otter-synca-admin-premium.php:115
-msgid "Easy restoration"
-msgstr "Restauração fácil"
-
-#: admin/partials/otter-synca-admin-premium.php:116
-msgid "Version history"
-msgstr "Histórico de versões"
-
-#: admin/partials/otter-synca-admin-premium.php:122
-msgid "Track all actions with detailed logs."
-msgstr "Acompanhe todas as ações com logs detalhados."
-
-#: admin/partials/otter-synca-admin-premium.php:124
-msgid "Complete history"
-msgstr "Histórico completo"
-
-#: admin/partials/otter-synca-admin-premium.php:125
-msgid "Log export"
-msgstr "Exportação de logs"
-
-#: admin/partials/otter-synca-admin-premium.php:126
-msgid "Advanced filters"
-msgstr "Filtros avançados"
-
-#: admin/partials/otter-synca-admin-premium.php:143
-msgid "1 License"
-msgstr "1 Licença"
-
-#: admin/partials/otter-synca-admin-premium.php:144
-msgid "Auto deploy"
-msgstr "Deploy automático"
-
-#: admin/partials/otter-synca-admin-premium.php:145
-msgid "Multiple repositories"
-msgstr "Múltiplos repositórios"
-
-#: admin/partials/otter-synca-admin-premium.php:146
-msgid "Automatic backup"
-msgstr "Backup automático"
-
-#: admin/partials/otter-synca-admin-premium.php:147
-msgid "Detailed logs"
-msgstr "Logs detalhados"
-
-
-#: admin/partials/otter-synca-admin-premium.php:149
-msgid "Email support"
-msgstr "Suporte por email"
-
-#: admin/partials/otter-synca-admin-premium.php:152
-msgid "Choose Plan"
-msgstr "Escolher Plano"
-
-#: admin/partials/otter-synca-admin-premium.php:158
-msgid "Most Popular"
-msgstr "Mais Popular"
-
-#: admin/partials/otter-synca-admin-premium.php:159
-msgid "Agency"
-msgstr "Agência"
-
-#: admin/partials/otter-synca-admin-premium.php:167
-msgid "5 Licenses"
-msgstr "5 Licenças"
-
-#: admin/partials/otter-synca-admin-premium.php:173
-msgid "Priority support"
-msgstr "Suporte prioritário"
-
-#: admin/partials/otter-synca-admin-premium.php:182
-msgid "Unlimited"
-msgstr "Ilimitado"
-
-#: admin/partials/otter-synca-admin-premium.php:190
-msgid "Unlimited licenses"
-msgstr "Licenças ilimitadas"
-
-#: admin/partials/otter-synca-admin-premium.php:196
-msgid "VIP support"
-msgstr "Suporte VIP"
-
-#: admin/partials/otter-synca-admin-premium.php:205
-msgid "All plans include the same Pro features, differing only in the number of available licenses."
-msgstr "Todos os planos incluem as mesmas funcionalidades Pro, diferenciando apenas na quantidade de licenças disponíveis."
-
-#: admin/partials/otter-synca-admin-help.php:20
-msgid "Getting Started"
-msgstr "Primeiros Passos"
-
-#: admin/partials/otter-synca-admin-help.php:25
-msgid "1. Create a GitHub Token"
-msgstr "1. Crie um Token do GitHub"
-
-#: admin/partials/otter-synca-admin-help.php:26
-msgid "To get started, you need to create a personal access token on GitHub:"
-msgstr "Para começar, você precisa criar um token de acesso pessoal no GitHub:"
-
-#: admin/partials/otter-synca-admin-help.php:28
-msgid "Go to GitHub settings"
-msgstr "Acesse as configurações do GitHub"
-
-#: admin/partials/otter-synca-admin-help.php:29
-msgid "Navigate to \"Developer settings\" > \"Personal access tokens\""
-msgstr "Vá para \"Developer settings\" > \"Personal access tokens\""
-
-#: admin/partials/otter-synca-admin-help.php:30
-msgid "Click \"Generate new token\""
-msgstr "Clique em \"Generate new token\""
-
-#: admin/partials/otter-synca-admin-help.php:31
-msgid "Give the token a name and select \"repo\" permissions"
-msgstr "Dê um nome ao token e selecione as permissões \"repo\""
-
-#: admin/partials/otter-synca-admin-help.php:32
-msgid "Copy the generated token and paste it in the \"GitHub Token\" field in the plugin settings"
-msgstr "Copie o token gerado e cole no campo \"GitHub Token\" nas configurações do plugin"
-
-#: admin/partials/otter-synca-admin-help.php:37
-msgid "2. Configure the Plugin"
-msgstr "2. Configure o Plugin"
-
-#: admin/partials/otter-synca-admin-help.php:38
-msgid "After creating the token, configure the plugin with the following information:"
-msgstr "Após criar o token, configure o plugin com as seguintes informações:"
-
-#: admin/partials/otter-synca-admin-help.php:40
-msgid "Repository: Repository name in the format username/repository"
-msgstr "Repositório: Nome do repositório no formato username/repository"
-
-#: admin/partials/otter-synca-admin-help.php:41
-msgid "Branch: Branch you want to deploy (default: main)"
-msgstr "Branch: Branch que você deseja fazer deploy (padrão: main)"
-
-#: admin/partials/otter-synca-admin-help.php:42
-msgid "Deploy Type: Select whether it is a plugin or theme"
-msgstr "Tipo de Deploy: Selecione se é um plugin ou tema"
-
-#: admin/partials/otter-synca-admin-help.php:43
-msgid "Target Slug: Name of the plugin or theme that will be updated"
-msgstr "Slug do Alvo: Nome do plugin ou tema que será atualizado"
-
-#: admin/partials/otter-synca-admin-help.php:48
-msgid "3. Deploy"
-msgstr "3. Faça o Deploy"
-
-#: admin/partials/otter-synca-admin-help.php:49
-msgid "With everything configured, you can deploy:"
-msgstr "Com tudo configurado, você pode fazer o deploy:"
-
-#: admin/partials/otter-synca-admin-help.php:51
-msgid "Verify that all settings are correct"
-msgstr "Verifique se todas as configurações estão corretas"
-
-#: admin/partials/otter-synca-admin-help.php:52
-msgid "Click the \"Deploy Now\" button"
-msgstr "Clique no botão \"Fazer Deploy Agora\""
-
-#: admin/partials/otter-synca-admin-help.php:53
-msgid "Wait for the process to complete"
-msgstr "Aguarde o processo ser concluído"
-
-#: admin/partials/otter-synca-admin-help.php:54
-msgid "Check the deploy status in the sidebar"
-msgstr "Verifique o status do deploy na barra lateral"
-
-#: admin/partials/otter-synca-admin-help.php:61
-msgid "Frequently Asked Questions"
-msgstr "Perguntas Frequentes"
-
-#: admin/partials/otter-synca-admin-help.php:64
-msgid "What permissions does the GitHub token need?"
-msgstr "Quais permissões o token do GitHub precisa ter?"
-
-#: admin/partials/otter-synca-admin-help.php:65
-msgid "The token needs repository access permission (repo). This allows the plugin to download code from the repository."
-msgstr "O token precisa ter permissão de acesso ao repositório (repo). Isso permite que o plugin baixe o código do repositório."
-
-#: admin/partials/otter-synca-admin-help.php:67
-msgid "Can I deploy multiple repositories?"
-msgstr "Posso fazer deploy de múltiplos repositórios?"
-
-#: admin/partials/otter-synca-admin-help.php:68
-msgid "Yes! In the premium version of the plugin you can configure multiple repositories and manage them centrally."
-msgstr "Sim! Na versão premium do plugin você pode configurar múltiplos repositórios e gerenciá-los de forma centralizada."
-
-#: admin/partials/otter-synca-admin-help.php:70
-msgid "Does the plugin backup before deploying?"
-msgstr "O plugin faz backup antes do deploy?"
-
-#: admin/partials/otter-synca-admin-help.php:71
-msgid "In the premium version, the plugin automatically backs up before each deployment, allowing you to revert to the previous version if necessary."
-msgstr "Na versão premium, o plugin faz backup automático antes de cada deploy, permitindo reverter para a versão anterior se necessário."
-
-#: admin/partials/otter-synca-admin-help.php:77
-msgid "Need more help?"
-msgstr "Precisa de mais ajuda?"
-
-#: admin/partials/otter-synca-admin-help.php:80
-msgid "If you didn't find the answer you were looking for, contact us:"
-msgstr "Se você não encontrou a resposta que procurava, entre em contato conosco:"
-
-#: admin/partials/otter-synca-admin-help.php:82
-msgid "Open an Issue on GitHub"
-msgstr "Abrir um Issue no GitHub"
-
-#: admin/partials/otter-synca-admin-coffee.php:24
-msgid "If you like OtterSynca and want to support its development, consider buying a coffee!"
-msgstr "Se você gosta do OtterSynca e quer apoiar seu desenvolvimento, considere comprar um café!"
-
-#: admin/partials/otter-synca-admin-coffee.php:29
-msgid "One Coffee"
-msgstr "Um Café"
-
-#: admin/partials/otter-synca-admin-coffee.php:31
-msgid "A simple coffee to start the day!"
-msgstr "Um café simples para começar o dia!"
-
-#: admin/partials/otter-synca-admin-coffee.php:33
-msgid "Buy a Coffee"
-msgstr "Comprar um Café"
-
-#: admin/partials/otter-synca-admin-coffee.php:38
-msgid "Double Coffee"
-msgstr "Café Duplo"
-
-#: admin/partials/otter-synca-admin-coffee.php:40
-msgid "Two coffees for a productive day!"
-msgstr "Dois cafés para um dia produtivo!"
-
-#: admin/partials/otter-synca-admin-coffee.php:42
-msgid "Buy Double Coffee"
-msgstr "Comprar Café Duplo"
-
-#: admin/partials/otter-synca-admin-coffee.php:47
-msgid "Premium Coffee"
-msgstr "Café Premium"
-
-#: admin/partials/otter-synca-admin-coffee.php:49
-msgid "A special coffee for a special day!"
-msgstr "Um café especial para um dia especial!"
-
-#: admin/partials/otter-synca-admin-coffee.php:51
-msgid "Buy Premium Coffee"
-msgstr "Comprar Café Premium"
-
-#: admin/partials/otter-synca-admin-coffee.php:57
-msgid "Your support is very important to keep OtterSynca development going!"
-msgstr "Seu apoio é muito importante para manter o desenvolvimento do OtterSynca!"
+#: includes/class-otter-synca-deployer.php:114
+#: includes/class-otter-synca-deployer.php:164
+msgid "GitHub token is required."
+msgstr "O token do GitHub é obrigatório."
+
+#: includes/class-otter-synca-deployer.php:140
+msgid "GitHub returned an invalid commit identifier."
+msgstr "O GitHub retornou um identificador de commit inválido."
+
+#: includes/class-otter-synca-deployer.php:220
+msgid "Invalid branch name."
+msgstr "Nome de branch inválido."
+
+#: includes/class-otter-synca-deployer.php:233
+msgid ""
+"Invalid target slug. Use lowercase letters, numbers, hyphens, or underscores."
+msgstr ""
+"Slug de destino inválido. Use letras minúsculas, números, hífens ou "
+"sublinhados."
+
+#: includes/class-otter-synca-deployer.php:246
+msgid "Invalid deployment type."
+msgstr "Tipo de deploy inválido."
+
+#: includes/class-otter-synca-deployer.php:259
+msgid "Invalid commit identifier."
+msgstr "Identificador de commit inválido."
+
+#: includes/class-otter-synca-deployer.php:300
+msgid "Could not create a temporary archive file."
+msgstr "Não foi possível criar um arquivo temporário."
+
+#: includes/class-otter-synca-deployer.php:332
+msgid "The repository archive is empty or exceeds the 100 MB limit."
+msgstr "O arquivo do repositório está vazio ou excede o limite de 100 MB."
+
+#: includes/class-otter-synca-deployer.php:343
+msgid "GitHub did not return a valid ZIP archive."
+msgstr "O GitHub não retornou um arquivo ZIP válido."
+
+#: includes/class-otter-synca-deployer.php:358
+msgid "The PHP ZIP extension is required for deployments."
+msgstr "A extensão ZIP do PHP é obrigatória para realizar deploys."
+
+#: includes/class-otter-synca-deployer.php:363
+msgid "Could not create a temporary extraction directory."
+msgstr "Não foi possível criar um diretório temporário de extração."
+
+#: includes/class-otter-synca-deployer.php:369
+msgid "Failed to open the downloaded ZIP archive."
+msgstr "Falha ao abrir o arquivo ZIP baixado."
+
+#: includes/class-otter-synca-deployer.php:374
+msgid "The repository archive contains too many files."
+msgstr "O arquivo do repositório contém arquivos demais."
+
+#: includes/class-otter-synca-deployer.php:384
+msgid "The repository archive contains an unsafe path or symbolic link."
+msgstr "O arquivo do repositório contém um caminho inseguro ou link simbólico."
+
+#: includes/class-otter-synca-deployer.php:388
+msgid "The extracted repository exceeds the 250 MB limit."
+msgstr "O repositório extraído excede o limite de 250 MB."
+
+#: includes/class-otter-synca-deployer.php:393
+msgid "Failed to extract the repository archive."
+msgstr "Falha ao extrair o arquivo do repositório."
+
+#: includes/class-otter-synca-deployer.php:450
+msgid "The repository archive has an unexpected structure."
+msgstr "O arquivo do repositório possui uma estrutura inesperada."
+
+#: includes/class-otter-synca-deployer.php:457
+msgid "The repository archive root is invalid."
+msgstr "A raiz do arquivo do repositório é inválida."
+
+#: includes/class-otter-synca-deployer.php:477
+msgid "The deployment directory is not writable."
+msgstr "O diretório de deploy não possui permissão de escrita."
+
+#: includes/class-otter-synca-deployer.php:491
+msgid "The deployment target is not a valid directory."
+msgstr "O destino do deploy não é um diretório válido."
+
+#: includes/class-otter-synca-deployer.php:495
+msgid "Could not create a rollback copy of the current version."
+msgstr "Não foi possível criar uma cópia de restauração da versão atual."
+
+#: includes/class-otter-synca-deployer.php:504
+msgid "Could not activate the downloaded version."
+msgstr "Não foi possível ativar a versão baixada."
+
+#: includes/class-otter-synca-deployer.php:526
+msgid "Could not create the deployment staging directory."
+msgstr "Não foi possível criar o diretório temporário de preparação do deploy."
+
+#: includes/class-otter-synca-deployer.php:532
+msgid "Symbolic links are not allowed in deployments."
+msgstr "Links simbólicos não são permitidos em deploys."
+
+#: includes/class-otter-synca-deployer.php:539
+msgid "Failed to copy a repository file."
+msgstr "Falha ao copiar um arquivo do repositório."
+
+#: includes/class-otter-synca-deployer.php:595
+msgid "Another deployment is already in progress. Try again in a few minutes."
+msgstr "Outro deploy já está em andamento. Tente novamente em alguns minutos."
+
+#: includes/class-otter-synca-deployer.php:615
+msgid "GitHub denied the request. Verify the token and repository permissions."
+msgstr ""
+"O GitHub negou a solicitação. Verifique o token e as permissões do "
+"repositório."
+
+#: includes/class-otter-synca-deployer.php:619
+msgid "Repository, branch, or commit not found on GitHub."
+msgstr "Repositório, branch ou commit não encontrado no GitHub."
+
+#. translators: %d: GitHub HTTP response status.
+#: includes/class-otter-synca-deployer.php:624
+#, php-format
+msgid "GitHub request failed with HTTP status %d."
+msgstr "A solicitação ao GitHub falhou com o status HTTP %d."
+
+#: includes/class-otter-synca-webhook.php:48
+msgid "Webhook endpoint is unavailable."
+msgstr "O endpoint do webhook não está disponível."
+
+#: includes/class-otter-synca-webhook.php:52
+msgid "Method not allowed."
+msgstr "Método não permitido."
+
+#: includes/class-otter-synca-webhook.php:64
+msgid "Webhook is not securely configured."
+msgstr "O webhook não está configurado de forma segura."
+
+#: includes/class-otter-synca-webhook.php:71
+msgid "Event ignored."
+msgstr "Evento ignorado."
+
+#: includes/class-otter-synca-webhook.php:76
+msgid "Webhook payload is too large."
+msgstr "O payload do webhook é muito grande."
+
+#: includes/class-otter-synca-webhook.php:81
+msgid "Invalid webhook payload."
+msgstr "Payload do webhook inválido."
+
+#: includes/class-otter-synca-webhook.php:88
+msgid "Invalid webhook signature."
+msgstr "Assinatura do webhook inválida."
+
+#: includes/class-otter-synca-webhook.php:93
+msgid "Invalid JSON payload."
+msgstr "Payload JSON inválido."
+
+#: includes/class-otter-synca-webhook.php:101
+msgid "Non-branch event ignored."
+msgstr "Evento que não pertence a uma branch ignorado."
+
+#: includes/class-otter-synca-webhook.php:109
+msgid "Invalid webhook repository or branch."
+msgstr "Repositório ou branch do webhook inválido."
+
+#: includes/class-otter-synca-webhook.php:113
+msgid "Invalid webhook commit identifier."
+msgstr "Identificador de commit do webhook inválido."
+
+#: includes/class-otter-synca-webhook.php:119
+msgid "Repository or branch is not configured for this webhook."
+msgstr "O repositório ou a branch não está configurado para este webhook."
+
+#: includes/class-otter-synca-webhook.php:123
+msgid "Commit was already deployed."
+msgstr "Este commit já foi implantado."
+
+#: includes/class-otter-synca-webhook.php:131
+msgid "Commit skipped by its message."
+msgstr "Commit ignorado devido à sua mensagem."
+
+#: includes/class-otter-synca-webhook.php:146
+msgid "Automatic deploy completed successfully."
+msgstr "Deploy automático concluído com sucesso."
+
+#: includes/class-otter-synca-webhook.php:167
+msgid "Deploy failed. Review the OtterSynca status in WordPress."
+msgstr "O deploy falhou. Verifique o status do OtterSynca no WordPress."

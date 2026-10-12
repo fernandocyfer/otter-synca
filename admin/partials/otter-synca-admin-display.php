@@ -22,7 +22,10 @@ $current_tab = filter_input( INPUT_GET, 'tab', FILTER_SANITIZE_FULL_SPECIAL_CHAR
 
 <div class="wrap otter-synca-admin">
     <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-     <h3>Deploys from GitHub to WordPress. <span><i>Just like that.</i></span></h3>
+    <h3>
+        <?php esc_html_e('Deploys from GitHub to WordPress.', 'otter-synca'); ?>
+        <span><i><?php esc_html_e('Just like that.', 'otter-synca'); ?></i></span>
+    </h3>
 
     <nav class="nav-tab-wrapper">
         <a href="?page=otter-synca&tab=settings" class="nav-tab <?php echo $current_tab === 'settings' ? 'nav-tab-active' : ''; ?>">
